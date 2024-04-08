@@ -1,0 +1,20 @@
+{% extends "card_base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+
+    <h1>Dra ett kort</h1>
+    <p class="draget"> Kort: {{ draw }} </p>
+    <p class="kort-kvar"> Kort kvar i kortleken: {{ deck }}</p>
+    <a href="{{ path('draw') }}" class="dra-kort">Dra ett kort</a>
+
+    {% set images = [
+        asset('build/images/kort.jpg'),
+        asset('build/images/kort2.jpg'),
+        asset('build/images/kort3.jpg')
+    ] %}
+
+    <img src="{{ random(images) }}" alt="Inga bilder" class="kmom02-bild" />
+
+    {% endblock %} 

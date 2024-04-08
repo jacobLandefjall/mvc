@@ -1,0 +1,22 @@
+{% extends "card_base.html.twig" %}
+
+{% block title %}Number{% endblock %}
+
+{% block body %}
+
+    <h1>Dra ett antal kort</h1>
+    {% for card  is draw %}
+        <p class="draget">Kort: {{card }}</p>
+        {% endfor %}
+    {% endif %}
+    <p class="kort-kvar">Kort kvar i kortleken: {{ deck }}</p>
+    
+    {% set images = [
+        asset('build/images/kort.jpg'),
+        asset('build/images/kort2.jpg'),
+        asset('build/images/kort3.jpg')
+    ] %}
+
+    <img src="{{ random(images) }}" alt="Inga bilder" class="kmom02-bild" />
+
+    {% endblock %} 

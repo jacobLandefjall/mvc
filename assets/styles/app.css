@@ -1,0 +1,226 @@
+body {
+    background: url('../images/background.jpg');
+    background-size: cover;
+    background-color: rgb(126, 228, 230);
+    font-family: 'Arial', sans-serif;
+    line-height: 2;
+    text-align: center;
+}
+
+.link-container {
+    position: fixed; /* Placera länkarna fast */
+    bottom: 0; /* Placera längst ned */
+    left: 0; /* Placera längst till vänster */
+    margin: 10px; /* Utrymme runt länkarna */
+    display: flex; /* använd flexbox */
+    align-items: baseline; /* Justera vertikalt */
+}
+
+.link-image {
+    display: block; /* Visa som block */
+    width: 100px; /* Skala bilden */
+    height: auto; /* Skala bilden */
+    margin: 0 auto 2px; /* Utrymme under bilder */
+    margin-right: 10px; /* Utrymme till höger om bilder */
+}
+
+header {
+ height: 100px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+h1 {
+    border-bottom: 4px double #ccc;
+}
+
+
+
+.content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.content-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-block {
+    margin-bottom: 15px;
+    line-height: normal;
+    letter-spacing: 3px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/**
+* Kmom02
+*/
+/*
+body {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #eee;
+    font-size: 2em;
+}*/
+main { 
+    padding: 0.5em;
+}
+
+input {
+    font-size: 1em;
+}
+
+h1 {
+    border-bottom: 4px double green;
+}
+
+.die {
+    font-size: 4em;
+}
+
+ul.dicearea {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.dicearea li {
+    display: inline;
+}
+
+.flash-notice {
+    padding: 0.5em;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.flash-warning:before {
+    content: "⚠";
+}
+/*
+* uppgiften kmom02
+*/
+nav {
+    background-color: yellowgreen;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 60x;
+    height: 60px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2x 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.spader {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hjärter {
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ruter {
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.klöver {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+/*
+* Kmom02 shuffle
+*/
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+/*
+* Kmom02 draw
+*/
+.draget, .kort-kvar, .dra-kort {
+    background-color: rgb(255, 255, 255);
+    font-size: large; /* texten större */
+    font-weight: bold; /* fet text */
+    font-family: 'Times New Roman', Times, serif; /* typsnitt */
+    border-radius: 5px; /* rundade hörn */
+    text-align: center; /* centrerad text */
+    padding: 10px 20px; /* lite utrymme runt texten */
+    display : inline-block; /* visa som block */
+    margin: 10px; /* lite utrymme runt elementet */
+}
+
+.kmom02-bild {
+    display: block; /* Visa som block */
+    margin: 20px auto; /* Utrymme runt bilden */
+    max-width: 80%; /* Skala bilden */
+    height: auto; /* Skala bilden */
+    border-radius: 20px; /* Runda hörn */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Skugga */
+}

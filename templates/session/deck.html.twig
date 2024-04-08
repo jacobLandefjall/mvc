@@ -1,0 +1,17 @@
+{% extends "card_base.html.twig" %}
+
+{% block title %}deck{% endblock %}
+
+{% block body %}
+
+    <h1>Kortlek</h1>
+    {% for suit, cards in deck %}
+    <h2>{{ suit }} </h2>
+        <div class="card-deck">
+        {% for cardValue in cards %}
+            <div class="card {{ suit|lower }}">{{ cardValue }}</div>
+
+        {% endfor %}
+        </div>
+    {% endfor %}
+    {% endblock %}

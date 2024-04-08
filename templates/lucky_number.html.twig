@@ -1,0 +1,18 @@
+{# templates/lucky_number.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+    <div style="background-color: {{ color }}; min-height: 100vh; padding: 20px;">
+    <h1>Lucky</h1>
+    <h3>Min slumpmässiga sida med dynamiska värden och en uppladdad bild</h3>
+    <p class="text-block">Mitt nuvarande nummer: {{ number }}<p>
+    <p class="text-block">Dagens frukost är: {{ food }}<p>
+    <p class="text-block">Du bör springa idag: {{ mile }}km<p>
+    <img src="{{ asset('build/images/background.jpg') }}" alt="Lucky image" class="lucky-image">
+    </div>
+
+
+{% endblock %}

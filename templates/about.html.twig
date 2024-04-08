@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>About</h1>
+    </header>
+
+    <h3>Kursen MVC (ModulViewController)</h3>
+    <p class="text-block">Syften med kursen är att vi skall lära oss programmera webbapplikationer på ett objektorienterat sätt.<p>
+    <p class="text-block">Kursen lär oss utveckla programmering i ramverk med hjälp av databaser,</div>dessutom kunna förklara och redogöra utveckling med objektorienterad programmering,
+    genom att skriva och sammanfatta våra övningar och projekt.</p>
+
+    <a href="{{ asset('img/glider.svg') }}">
+        <img src="{{ asset('img/glider.svg') }}" alt="">
+    </a>
+
+    <img src="{{ asset('build/images/kmom01-symfony.png') }}" alt="no symfony">
+
+{% endblock %}
