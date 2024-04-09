@@ -20,15 +20,6 @@
         <li><a href="{{ path('deck') }}">Deck</a></li>
         <li><a href="{{ path('shuffle') }}">Shuffle</a></li>
         <li><a href="{{ path('draw') }}">Draw</a></li>
-        <form action="{{ path('number') }}" method="get">
-            <select name="number" id="numberCards">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <button type="submit">Dra kort</button>
-        <form/>
     </ul>
     </nav>
         {% block body %}{% endblock %}
@@ -37,7 +28,7 @@
           <a href="https://github.com/dbwebb-se/mvc">
         <img src="{{ asset('build/images/github.png') }}" alt="no github"  class="link-image"></a>
 
-    <a href="https://github.com/jacobLandefjall/http-localhost-8888">
+    <a href="https://github.com/jacobLandefjall/mvc">
         <img src="{{ asset('build/images/databas.jpg') }}" alt="no database"  class="link-image"></a>
     </div>
 </html>

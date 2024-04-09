@@ -4,8 +4,17 @@
 
 {% block body %}
     <h1>Card</h1>
-    <p class="text-block">Förstasida Card ger information om strukturen på klasser,
+    <p class="text-block">Card ger information om strukturen på klasser,
     vilka klasser används och hur är de relaterade till varandra.
     Card länkar till samtliga undersidor för denna uppgift. <p>
+    <p class="text-block"> Controllers: 'CardGameController' hanterar rutter, aspekter av spelet.
+    Denna controller ser till att visa, strukturera och manipulera en kortlek.<p>
+    <p class="text-block">Deck: Rutten deck visar samtliga kort i kortleken sorterade i värde och färg.<p>
+    <p class="text-block">Shuffle: Visar samtliga kort i kortleken när den har blivt blandad.<p>
+    <p class="text-block">Draw: Drar ett eller flera kort från kortleken och visar hur många kort som finns kvar i kortleken.<p>
+    <div>
+    <h3> UML diagram </h3>
+        <p> Diagram över strukturen på klasserna</p>
+        <img src="{{ asset('build/images/mvc.drawio(1).png') }}" alt="" width="600" height="auto" class="kmom02-bild">
 
 {% endblock %}

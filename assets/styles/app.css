@@ -18,7 +18,7 @@ body {
 
 .link-image {
     display: block; /* Visa som block */
-    width: 100px; /* Skala bilden */
+    width: 50px; /* Skala bilden */
     height: auto; /* Skala bilden */
     margin: 0 auto 2px; /* Utrymme under bilder */
     margin-right: 10px; /* Utrymme till höger om bilder */
@@ -103,9 +103,12 @@ ul.dicearea li {
 
 .flash-notice {
     padding: 0.5em;
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
+    color: #d3cfcf;
+    background-color: #000000;
+    border-color: #ffffff;
+    font-size: large; /* texten större */
+    font-weight: bold; /* fet text */
+    border-radius: 20px; /* Runda hörn */
 }
 .flash-notice:before {
     content: "ⓘ";
@@ -116,6 +119,9 @@ ul.dicearea li {
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
+    font-size: large; /* texten större */
+    font-weight: bold; /* fet text */
+    border-radius: 20px; /* Runda hörn */
 }
 .flash-warning:before {
     content: "⚠";
@@ -204,7 +210,8 @@ nav ul li a:hover {
 /*
 * Kmom02 draw
 */
-.draget, .kort-kvar, .dra-kort {
+.draget, .kort-kvar, .dra-kort
+{
     background-color: rgb(255, 255, 255);
     font-size: large; /* texten större */
     font-weight: bold; /* fet text */
@@ -214,6 +221,14 @@ nav ul li a:hover {
     padding: 10px 20px; /* lite utrymme runt texten */
     display : inline-block; /* visa som block */
     margin: 10px; /* lite utrymme runt elementet */
+ 
+}
+
+.dra-kort:hover
+{
+    background-color: rgb(97, 97, 97);
+    color: yellowgreen;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .kmom02-bild {

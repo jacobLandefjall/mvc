@@ -1,14 +1,16 @@
+{% extends "card_base.html.twig" %}
+
 {% block title %}Home session{% endblock %}
 
-{% block main %}
-<h1>Home session</h1>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.o">
-    <title>Home Session</title>
-</head>
-<body>
-    <h2>
-
-
+{% block body %}
+<h1>Session information</h1>
+{% if sessionData %}
+    <ul>
+    {% for key, value in sessionData %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>sessionData hittades inte</p>
+{% endif %}
 {% endblock %}

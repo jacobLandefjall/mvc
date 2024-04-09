@@ -1,0 +1,17 @@
+{% extends "card_base.html.twig" %}
+
+{% block title %}Session delete{% endblock %}
+
+{% block body %}
+<div class="text-block"
+    <h1>Session Raderad</h1></div>
+    <p
+    {% for message in app.flashes('notice')%}
+        <div class="flash-notice" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %} <p>
+    
+    <a class="text-block" href="{{ path('card') }}" class="btn btn-primary">Startsidan</a>
+</div>
+{% endblock %}

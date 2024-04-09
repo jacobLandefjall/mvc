@@ -4,15 +4,25 @@
 
 {% block body %}
 
-    <h1>Dra ett kort</h1>
-    <p class="draget"> Kort: {{ draw }} </p>
-    <p class="kort-kvar"> Kort kvar i kortleken: {{ deck }}</p>
-    <a href="{{ path('draw') }}" class="dra-kort">Dra ett kort</a>
+    <h1>Dra kort</h1>
 
+    {% for card in draw %}
+        {% for cards in card %}
+            <p class="draget"> Kort: {{ cards }}</p>
+        {% endfor %}
+    {% endfor %}
+    <div class="dra-kort-container">
+    <a href="{{ path('draw', {'number': 1}) }}" class="dra-kort">Dra 1 kort</a>
+    <a href="{{ path('draw', {'number': 2}) }}" class="dra-kort">Dra 2 kort</a>
+    <a href="{{ path('draw', {'number': 3}) }}" class="dra-kort">Dra 3 kort</a>
+    <a href="{{ path('draw', {'number': 4}) }}" class="dra-kort">Dra 4 kort</a>
+    <a href="{{ path('draw', {'number': 5}) }}" class="dra-kort">Dra 5 kort</a>
+    </div>
+    <p class="kort-kvar"> Kort kvar i kortleken: {{ deck }}</p>
+    
     {% set images = [
         asset('build/images/kort.jpg'),
-        asset('build/images/kort2.jpg'),
-        asset('build/images/kort3.jpg')
+        asset('build/images/kort2.jpg')
     ] %}
 
     <img src="{{ random(images) }}" alt="Inga bilder" class="kmom02-bild" />

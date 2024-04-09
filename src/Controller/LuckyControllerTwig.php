@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,33 +47,33 @@ class LuckyControllerTwig extends AbstractController
     }
     #[Route("/api", name: "api")]
     public function api(): Response
-{
-    $apiRoutes = [
-        [
-            'namn' => 'API Quote',
-            'länk' => 'api_quote', // Ändra till routens namn
-            'innehåll' => 'Skriver ut ett slumpmässigt citat.'
-        ],
-        [
-            'namn' => 'API Card',
-            'länk' => 'api_deck', // Ändra till routens namn
-            'innehåll' => 'EN sida som genererar en kortlek sorterade i värde och färg.'
-        ],
-        [
-            'namn' => 'API Shuffle',
-            'länk' => 'api_shuffle', // Ändra till routens namn
-            'innehåll' => 'EN sida som genererar en blandad kortlek.'
-        ],
-        [
-            'namn' => 'API Draw',
-            'länk' => 'api_draw', // Ändra till routens namn
-            'innehåll' => 'En sida som drar ett eller flera kort från kortleken och presenterar det för användaren.'
-        ]
-    ];
+    {
+        $apiRoutes = [
+            [
+                'namn' => 'API Quote',
+                'länk' => 'api_quote', // Ändra till routens namn
+                'innehåll' => 'Skriver ut ett slumpmässigt citat.'
+            ],
+            [
+                'namn' => 'API Deck',
+                'länk' => 'api_deck',
+                'innehåll' => 'En sida som genererar en kortlek sorterade i värde och färg.'
+            ],
+            [
+                'namn' => 'API Shuffle',
+                'länk' => 'api_shuffle',
+                'innehåll' => 'En sida som genererar en blandad kortlek.'
+            ],
+            [
+                'namn' => 'API Draw',
+                'länk' => 'api_draw',
+                'innehåll' => 'En sida som drar ett eller flera kort från kortleken och presenterar kortet.'
+            ]
+        ];
 
-    return $this->render('api.html.twig', [
-        'apiRoutes' => $apiRoutes
-    ]);
+        return $this->render('api.html.twig', [
+            'apiRoutes' => $apiRoutes
+        ]);
     }
     #[Route("/api/quote", name: "api_quote")]
     public function api_quote(): Response
@@ -98,7 +100,7 @@ class LuckyControllerTwig extends AbstractController
         return $response;
     }
 
-    #[Route("/api/deck", name: "api_deck")]
+    #[Route("/api/deck", name: "api_deck", methods: ["GET"])]
     public function api_card(): JsonResponse
     {
         $cards = [
@@ -113,13 +115,14 @@ class LuckyControllerTwig extends AbstractController
         $deck = [];
 
         foreach ($cards as $card => $symbol) {
-            foreach ($values as $value) 
+            foreach ($values as $value) {
                 $deck[$card][] = $symbol . ' ' . $value;
             }
+        }
         return new JsonResponse($deck);
     }
-    #[Route("/api/shuffle", name: "api_shuffle")]
-    public function api_shuffle(Request $request): JsonResponse
+    #[Route("/api/deck/shuffle", name: "api_shuffle", methods: ["GET", "POST"])]
+    public function api_shuffle(Request $request, SessionInterface $session): JsonResponse
     {
         $cards = [
             'spader' => '♠',
@@ -133,9 +136,10 @@ class LuckyControllerTwig extends AbstractController
         $deck = [];
 
         foreach ($cards as $card => $symbol) {
-            foreach ($values as $value) 
+            foreach ($values as $value) {
                 $deck[] = $symbol . ' ' . $value;
             }
+        }
         shuffle($deck);
 
         $session = $request->getSession();
@@ -143,22 +147,41 @@ class LuckyControllerTwig extends AbstractController
 
         return new JsonResponse($deck);
     }
-    #[Route("/api/draw", name: "api_draw")]
-    public function api_draw(): Response
+    #[Route("/api/deck/draw", name: "api_draw", methods: ["GET", "POST"])]
+    public function api_Draw(Request $request, SessionInterface $session): JsonResponse
     {
-        $today = new \DateTime('2024-04-07 17:25:51'); // Ett specifikt datum
-        $quote = "En sida som drar ett eller flera kort från kortleken och presenterar det för användaren";
-        $quotes = $quote[array($quote)];
+        if (!$session->has('deck')) { // Kortlek i sessionen
+            $cards = [
+                'spader' => '♠',
+                'hjärter' => '♥',
+                'ruter' => '♦',
+                'klöver' => '♣'
+            ];
 
-        $data = [
-            'API Deck' => $quotes,
-            'Tidsstämpel' => $today->format('Y-m-d H:i:s')
-        ];
+            $values = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Knekt', 'Dam', 'Kung', 'Ess'];
 
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
+            $deck = [];
+            foreach ($cards as $card => $symbol) {
+                foreach ($values as $value) {
+                    $deck[] = $symbol . ' ' . $value;
+                }
+            }
+
+            shuffle($deck);
+            $session->set('deck', $deck); // Spara kortleken i sessionen
+        } else {
+            $deck = $session->get('deck'); // Hämtar kortleken från sessionen
+        }
+
+        $number = $request->query->get('number', 1); // Standardvärde 1
+
+        // Drar :number från kortleken och uppdaterar sessionen
+        $draw = array_splice($deck, 0, $number);
+        $session->set('deck', $deck);
+
+        return new JsonResponse([
+            'draw' => $draw,
+            'deck' => count($deck)
+        ]);
     }
 }
