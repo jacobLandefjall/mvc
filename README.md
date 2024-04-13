@@ -1,6 +1,6 @@
 # Välkommen till MVC kursen
 
-(profilbild_fb.jpg)
+![MVC](https://dbwebb.se/kurser/mvc-v2)
 
 Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och hur vi kan klona kurs repot.
 
