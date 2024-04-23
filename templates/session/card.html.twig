@@ -7,14 +7,16 @@
     <p class="text-block">Card ger information om strukturen på klasser,
     vilka klasser används och hur är de relaterade till varandra.
     Card länkar till samtliga undersidor för denna uppgift. <p>
-    <p class="text-block"> Controllers: 'CardGameController' hanterar rutter, aspekter av spelet.
-    Denna controller ser till att visa, strukturera och manipulera en kortlek.<p>
-    <p class="text-block">Deck: Rutten deck visar samtliga kort i kortleken sorterade i värde och färg.<p>
-    <p class="text-block">Shuffle: Visar samtliga kort i kortleken när den har blivt blandad.<p>
-    <p class="text-block">Draw: Drar ett eller flera kort från kortleken och visar hur många kort som finns kvar i kortleken.<p>
+    <p class="text-block">Klassen Card representerar ett kort, färgen på kortet(hjärter, ruter, klöver, spader) och
+    värdet på kortet (1-13 i ett standard kortspel).<p>
+    <p class="text-block">Klassen Deck är ett exempel på komposition eftersom den består av Card objekt.
+    Klassen representerar en korlek, blandar kortleken, drar kort och flera metoder.<p>
+    <p class="text-block">CardGraphic lägger till extra metoder, som inte finns i Card Klassen.
+    CardGraphic utökar Card genom att ärva alla dess egenskaper.<p>
     <div>
     <h3> UML diagram </h3>
         <p> Diagram över strukturen på klasserna</p>
         <img src="{{ asset('build/images/mvc.drawio(1).png') }}" alt="" width="600" height="auto" class="kmom02-bild">
+
 
 {% endblock %}

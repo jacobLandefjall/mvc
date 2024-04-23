@@ -17,16 +17,17 @@
     <nav>
     <ul>
         <li><a href="{{ path('home') }}">Presentation</a></li>
-        <li><a href="{{ path('about') }}">About</a></li>
-        <li><a href="{{ path('lucky_number') }}">Lucky</a></li>
-        <li><a href="{{ path('report') }}">Report</a></li>
-        <li><a href="{{ path('api') }}">JSON routes</a></li>
-        <li><a href="{{ path('card') }}">Card</a></li>
+        <li><a href="{{ path('deck') }}">Deck</a></li>
+        <li><a href="{{ path('shuffle') }}">Shuffle</a></li>
+        <li><a href="{{ path('draw') }}">Draw</a></li>
+        <li><a href="{{ path('game') }}">Game</a></li>
+        <li><a href="{{ path('game_doc') }}">Game Dokumentation</a></li>
+
     </ul>
     </nav>
         {% block body %}{% endblock %}
     </body>
-    <div class="link-container">
+          <div class="link-container">
           <a href="https://github.com/dbwebb-se/mvc">
         <img src="{{ asset('build/images/databas.jpg') }}" alt="no github"  class="link-image"></a>
 

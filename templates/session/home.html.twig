@@ -1,13 +1,24 @@
 {% extends "card_base.html.twig" %}
 
-{% block title %}Home session{% endblock %}
-
 {% block body %}
 <h1>Session information</h1>
 {% if sessionData %}
     <ul>
     {% for key, value in sessionData %}
-        <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% if key != 'originalDeck' %}
+            <li><strong>{{ key }}:</strong> 
+            {% if key == 'removedCards' %}
+                Removed cards: 
+                {% for card in value %}
+                    {{ card.getSuit }} {{ card.getValue }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            {% elseif key == 'deck' %}
+                {{ value }} cards left in the deck
+            {% else %}
+                {{ value }}
+            {% endif %}
+            </li>
+        {% endif %}
     {% endfor %}
     </ul>
 {% else %}

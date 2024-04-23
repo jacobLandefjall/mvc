@@ -1,0 +1,26 @@
+
+{% extends "blackjack/game_base.html.twig" %}
+
+{% block title %}Blackjack Game{% endblock %}
+
+{% block body %}
+    <h1>Blackjack Game</h1>
+
+    <p>Player Score: {{ game.getPlayer().getScore() }}</p>
+    <p>Dealer Score: {{ game.getDealer().getScore() }}</p>
+
+    {% if game.getGameOver() %}
+        <p>Game Over!</p>
+        <p>{{ game.getMessage() }}</p>
+    {% else %}
+        <form action="{{ path('game_hit') }}" method="post">
+            <input type="submit" value="Hit">
+        </form>
+        <form action="{{ path('game_stand') }}" method="post">
+            <input type="submit" value="Stand">
+        </form>
+        <form action="{{ path('game_surrender') }}" method="post">
+            <input type="submit" value="Surrender">
+        </form>
+    {% endif %}
+{% endblock %}

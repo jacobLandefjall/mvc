@@ -1,0 +1,39 @@
+{% extends "blackjack/game_base.html.twig" %}
+
+{% block title %}Game Page{% endblock %}
+
+{% block body %}
+    <h1>Game information</h1>
+    <h2>Blackjack <a href="{{ path('draw', {'number': 1}) }}" class="dra-kort">Starta Spelet</a></h2>
+    <p class="text-block">Blackjack, är ett populärt kortspel som förekommer ofta på kasinon.
+    Spelet introducerades under 1900-talet och är idag en av det mest populära kasinospel i världen.
+    Den svenska varianten av Blackjack är tjugoett. Skillnaderna mellan dessa två spel är dels kortens värde,
+    samt att i tjugoett spelar dealern mot en spelare i taget och inte som i Blackjack mot alla på en gång.<p>
+
+    <h2>Regler</h2>
+    <p class="text-block">Spelet går ut på att vinna över dealern genom att samla ihop kort så nära talet 21 som möjligt
+    utan att överskrida summan 21, men ha ett högre värde än dealerns kort.</p>
+    <p class="text-block">Numrerade kort har ett värde motsvarande deras nummer(2-10).
+    Alla klädda kort är värda 10 och ess är värda 11 eller 1.</p>
+    <p class="text-block">Bästa handen i Blackjack är "Blackjack". Detta utgörs av ett ess och ett kort som är värt 10.
+    Detta måste fås på de två första korten.</p>
+    <p class="text-block">Spelet startat med att varje spelare får två kort.
+
+    <h2>Spelet</h2>
+    <p class="text-block">Spelare får valet att be om kort för att försöka öka dess totala värde.
+    Efter att ha dragit önskat antal kort kommer dealern att slutföra sin hand.
+    Alternativ kan spelaren behålla den nuvarande handens värde för att utmana dealern. Detta kallas "stå".
+    Andra alternativ är "dela", "dubbla" och "ge upp".</p>
+     <p class="text-block">"Dela" vilket förvandlar en hand till två händer. Spelaren får då startkort av samma värde(fem-fem, o.s.v).</p>
+     <p class="text-block">"Dubbla" ger möjligheten att dubbla ursprungliga insatsen. Dock endast när de två första korten är utdelade 
+    kan spelaren lägga till ännu en insats och få ytterligare ett kort för att förbättra kort handen.</p>
+      <p class="text-block">"Ge upp" spelaren kan ge upp spel handen.</p>
+
+    <h2>Strategi</h2>
+     <p class="text-block">Strategier när det är bäst att stå, dubbla, dela eller ge upp kan leda
+    chansen till både vinst eller förlust.</p>
+    <p class="text-block">Blackjack är känt för att spelare kan faktiskt ha en matematisk fördel, vilket innebär att Blackjack är inte bra ett tur-spel.
+    Detta är dock beroende på om det så kallade korträkning får användas eller inte.</p>
+   <div>
+
+{% endblock %}

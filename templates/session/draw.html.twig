@@ -6,11 +6,11 @@
 
     <h1>Dra kort</h1>
 
-    {% for card in draw %}
-        {% for cards in card %}
-            <p class="draget"> Kort: {{ cards }}</p>
-        {% endfor %}
+
+        {% for card in drawnCards %}
+    <div class="card {{ card.getColor }}">{{ card.getSuit }} {{ card.getValue }}</div>
     {% endfor %}
+
     <div class="dra-kort-container">
     <a href="{{ path('draw', {'number': 1}) }}" class="dra-kort">Dra 1 kort</a>
     <a href="{{ path('draw', {'number': 2}) }}" class="dra-kort">Dra 2 kort</a>

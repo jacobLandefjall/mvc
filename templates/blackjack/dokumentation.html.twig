@@ -1,0 +1,36 @@
+{% extends "blackjack/game_base.html.twig" %}
+
+{% block title %}Blackjack Dokumentation{% endblock %}
+
+{% block body %}
+<h1>Blackjack Dokumentation</h1>
+<p class="text-block">Här finns all information om hur spelet Blackjack är uppbyggt och fungerar. Här finner du även
+information och tankar inom grunderna i spelet. Nedanför hittas ett flödesschema som representerar tankar kring grunderna,
+Psuedokod som visar lösa delar av och funderinger igenom vilka klasser kan behövas implementeras.<p>
+
+<h2>Flödesschema</h2>
+<img src="{{ asset('build/images/flödesschema.drawio.png') }}" alt="no flödesschema" width="450" height="auto" class="kmom02-bild">
+
+<h2>Psuedokod</h2>
+<img src="{{ asset('build/images/psuedokod.png') }}" alt="no psuedokod" width="450" height="auto" class="kmom02-bild">
+
+<h2>Klasser</h2>
+<p class="text-block">Målet är att klasserna som ska implementeras i spelet, ska vara på ett objektorienterat sätt. Detta sätt skaps med flera
+klasser för att kunna hantera olika delar av spelet. Nedanför hittas en lista över klasser och deras syfte: </p>
+
+<h3>BlackjackGame</h3>
+<p class="text-block">Hanterar spelets flöde. Kontrollerar spelets regler, turordningen mellan spelare och dealer. BlackjackGame ser över spelets status(pågående, avslutat, vinnare, förlorare).</p>
+
+<h3>Deck</h3>
+<p class="text-block">Klassen ansvarar för kortleken i spelet. Deck blandar kortleken och delar ut kort till spelarna.</p>
+
+<h3>Player</h3>
+<p class="text-block">Denna klass representerar spelare och dealern. Klassen innehåller spelarnas hand, tar emot kort, beräknar poäng och ser över metoder till exempel ("Stand", "Hit").</p>
+
+<h3>Hand</h3>
+<p class="text-block">Hand håller koll vad varje spelare håller i sin hand. Den hanterar fler kort till handen, beräknar och returnerar värdet i handen. Klassen ser även över om handen har fått "BlackJack".</p>
+
+<h3>Card</h3>
+<p class="text-block">Representerar varje kort-objekt, ett enskilt kort i kortleken. Varje korts rang såsom(ess, kung, dam) och svit(spader,hjärter). Card ansvarar för att få kortets värde i blackjack( ess är 11 eller 1, kung är 10 o.s.v).</p>
+
+{% endblock %}
