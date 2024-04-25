@@ -6,7 +6,7 @@
 <h1>Blandad Kortlek</h1>
 <div class="card-deck">
     {% for card in deck %}
-        <div class="card {{ card.getColor }}">{{ card.getSuit }} {{ card.getValue }}</div>
+        <div class="card {{ card.getColor }}">{{ card.getGraphic }}</div>
     {% endfor %}
 </div>
 {% endblock %}

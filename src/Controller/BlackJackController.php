@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlackJackController extends AbstractController
 {
-    // Kmom03 blackjack
+    // Kmom03 blackjack by Jacob
 
     // Route för game sidan
     #[Route("/game", name: "game")]
@@ -28,18 +28,45 @@ class BlackJackController extends AbstractController
     public function doc(): Response
     {
         return $this->render('blackjack/dokumentation.html.twig');
-
     }
-    // Route för att starta spelet
     #[Route("/game/start", name: "start", methods: ["GET"])]
     public function playGame(): Response
     {
         $deck = new Deck();
-        // Create your game object here
         $game = new BlackJackGame();
 
         return $this->render('blackjack/start.html.twig', [
             'game' => $game,
         ]);
+    }
+    #[Route("/game/hit", name: "game_hit", methods: ["POST"])]
+    public function hit(SessionInterface $session): Response {
+        $game = $session->get('game');
+        $game->playerHits();
+        $session->set('game', $game);
+    
+        return $this->redirectToRoute('start');
+    }
+    
+    #[Route("/game/stand", name: "game_stand", methods: ["POST"])]
+    public function stand(SessionInterface $session): Response {
+        $game = $session->get('game');
+        $game->playerStands();
+        $session->set('game', $game);
+    
+        return $this->redirectToRoute('start');
+    }
+    
+    #[Route("/game/surrender", name: "game_surrender", methods: ["POST"])]
+    public function surrender(SessionInterface $session): Response {
+        $game = $session->get('game');
+        $game->playerSurrenders();
+        $session->set('game', $game);
+    
+        return $this->redirectToRoute('start');
+    }
+    #[Route("/test", name: "test_route")]
+    public function test(): Response {
+        return new Response("Test route works!");
     }
 }

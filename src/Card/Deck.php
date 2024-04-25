@@ -2,6 +2,8 @@
 
 namespace App\Card;
 
+use App\Card\CardGraphic;
+
 class Deck
 {
     private $deck;
@@ -14,12 +16,12 @@ class Deck
     private function createDeck()
     {
         $suits = ['hearts', 'diamonds', 'clubs', 'spades'];
-        $values = range(1, 13);
+        $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
         $deck = [];
 
         foreach ($suits as $suit) {
             foreach ($values as $value) {
-                $deck[] = new Card($suit, $value);
+                $deck[] = new CardGraphic($suit, $value);
             }
         }
 

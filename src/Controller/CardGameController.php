@@ -24,19 +24,21 @@ class CardGameController extends AbstractController
     {
         $deck = $session->get('deck', []);
     
-        // Only create a new deck if there isn't one in the session
         if (empty($deck)) {
             $cardGame = new Deck();
             $deck = $cardGame->getDeck();
             $session->set('deck', $deck);
             $session->set('originalDeck', $deck);
         }
-    
+            $cardGraphic = new CardGraphic('hearts', 'A');
+            $graphic = $cardGraphic->getGraphic();
+
         return $this->render('session/deck.html.twig', [
             'deck' => $deck,
+            'cardGraphic' => $graphic
         ]);
     }
-    
+
     #[Route("/card/deck/shuffle", name: "shuffle")]
     public function shuffle(SessionInterface $session): Response
     {
@@ -48,7 +50,9 @@ class CardGameController extends AbstractController
     
         $shuffledDeck = $cardGame->getDeck();
         $session->set('deck', $shuffledDeck);
-    
+
+        $cardGraphic = new CardGraphic('hearts', 'A');
+    $graphic = $cardGraphic->getGraphic();
         return $this->render('session/shuffle.html.twig', [
             'deck' => $shuffledDeck,
         ]);

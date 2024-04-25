@@ -4,19 +4,29 @@ namespace App\Card;
 
 class CardGraphic extends Card
 {
-private $representation = [
-    'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
-];
+    public function __construct($suit, $value)
+    {
+        parent::__construct($suit, $value);
+        
+    }
 
-public function __construct()
-{
-    parent::__construct();
+    public function getGraphic(): string
+    {
+        $suits = [
+            'hearts' => '♥',
+            'diamonds' => '♦',
+            'clubs' => '♣',
+            'spades' => '♠'
+        ];
+        
+        return $this->getValue() . $suits[$this->getSuit()];
+    }
+ 
+
 }
+/*use App\Card\Card;
+$card = new CardGraphic('hearts', 'A');
 
-public function getAsString(): string
-{
-    return $this->representation[$this->value - 1];
-}
+$graphic = $card->getGraphic();
 
-}
-
+echo $graphic;*/
