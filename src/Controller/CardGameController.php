@@ -23,15 +23,15 @@ class CardGameController extends AbstractController
     public function deck(SessionInterface $session): Response
     {
         $deck = $session->get('deck', []);
-    
+
         if (empty($deck)) {
             $cardGame = new Deck();
             $deck = $cardGame->getDeck();
             $session->set('deck', $deck);
             $session->set('originalDeck', $deck);
         }
-            $cardGraphic = new CardGraphic('hearts', 'A');
-            $graphic = $cardGraphic->getGraphic();
+        $cardGraphic = new CardGraphic('hearts', 'A');
+        $graphic = $cardGraphic->getGraphic();
 
         return $this->render('session/deck.html.twig', [
             'deck' => $deck,
@@ -47,12 +47,12 @@ class CardGameController extends AbstractController
         $cardGame = new Deck();
         $cardGame->setDeck($originalDeck);
         $cardGame->shuffleDeck();
-    
+
         $shuffledDeck = $cardGame->getDeck();
         $session->set('deck', $shuffledDeck);
 
         $cardGraphic = new CardGraphic('hearts', 'A');
-    $graphic = $cardGraphic->getGraphic();
+        $graphic = $cardGraphic->getGraphic();
         return $this->render('session/shuffle.html.twig', [
             'deck' => $shuffledDeck,
         ]);
@@ -61,18 +61,18 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw/{number}", name: "draw", requirements: ['number' => '\d+'])]
     public function draw(SessionInterface $session, int $number = 1): Response
     {
-    $deck = $session->get('deck', []);
-    $cardGame = new Deck();
-    $cardGame->setDeck($deck);
-    $drawnCards = $cardGame->drawCards($number);
+        $deck = $session->get('deck', []);
+        $cardGame = new Deck();
+        $cardGame->setDeck($deck);
+        $drawnCards = $cardGame->drawCards($number);
 
-    // Update the deck in the session after drawing cards
-    $session->set('deck', $cardGame->getDeck());
+        // Update the deck in the session after drawing cards
+        $session->set('deck', $cardGame->getDeck());
 
-    return $this->render('session/draw.html.twig', [
-        'drawnCards' => $drawnCards,
-        'deck' => count($cardGame->getDeck()),
-    ]);
+        return $this->render('session/draw.html.twig', [
+            'drawnCards' => $drawnCards,
+            'deck' => count($cardGame->getDeck()),
+        ]);
     }
 
     #[Route("/session", name: "session")]
@@ -83,13 +83,13 @@ class CardGameController extends AbstractController
         $currentDeck = $session->get('deck', []);
 
         $removedCards = array_udiff($originalDeck, $currentDeck, function ($a, $b) {
-        // Compare the suit and value properties of the Card objects
-        if ($a->getSuit() !== $b->getSuit()) {
-            return $a->getSuit() <=> $b->getSuit();
-    }
+            // Compare the suit and value properties of the Card objects
+            if ($a->getSuit() !== $b->getSuit()) {
+                return $a->getSuit() <=> $b->getSuit();
+            }
 
-    return $a->getValue() <=> $b->getValue();
-    });
+            return $a->getValue() <=> $b->getValue();
+        });
         foreach ($session->all() as $key => $value) { // Loopar och sparar sessiondata i en array.
             if ($key == 'deck') {
                 $sessionData['removedCards'] = $removedCards;

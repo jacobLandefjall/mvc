@@ -7,7 +7,7 @@ class CardGraphic extends Card
     public function __construct($suit, $value)
     {
         parent::__construct($suit, $value);
-        
+
     }
 
     public function getGraphic(): string
@@ -18,10 +18,10 @@ class CardGraphic extends Card
             'clubs' => '♣',
             'spades' => '♠'
         ];
-        
+
         return $this->getValue() . $suits[$this->getSuit()];
     }
- 
+
 
 }
 /*use App\Card\Card;

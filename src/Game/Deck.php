@@ -2,41 +2,61 @@
 
 namespace App\Game;
 
+$deck = new Deck();
+$cards = $deck->getCards();
+
 require_once("Card.php"); // inkluderar Card.php
 
 class Deck
 {
     private $cards = [];
-    // Skapar en konstruktor som skapar en kortlek och blandar den
+
+    /**
+     * @return void
+     * Skapar en konstruktor som skapar en kortlek och blandar den
+     */
     public function __construct()
     {
         $this->CreateDeck();
         $this->ShuffleDeck();
     }
 
-    public function CreateDeck()
-    { 
-        $emojis = ["🃑", "🃒", "🃓","🃔","🃕","🃖","🃗","🃘","🃙",
-                "🃚","🃜","🃝","🃞","🃎","🃍","🃌","🃊","🃉","🃈","🃇","🃆","🃅","🃄","🃃","🃂",
-                "🃁","🂾","🂽","🂼","🂺","🂹","🂸","🂷","🂶","🂵","🂴","🂳","🂲","🂱","🂡","🂢","🂣",
-                "🂤","🂥","🂦","🂧","🂨","🂩","🂪","🂬","🂭","🂮"
-            ];
-        foreach ($emojis as $emoji) {
-            $this->cards[] = new Card($emoji);
-        } 
+    /**
+     * @return void
+     * Skapar en metod för att skapa en kortlek
+     */
+    private function createDeck()
+    {
+        $suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+        $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        $deck = [];
+
+        foreach ($suits as $suit) {
+            foreach ($values as $value) {
+                $this->cards[] = new Card($suit, $value);
+            }
+        }
     }
-    // Skapar en metod för att blanda kortleken
+
+    /**
+     * @return void
+     * Blandar kortleken
+     */
     public function shuffleDeck()
     {
         shuffle($this->cards);
     }
- // Skapar en metod för att dra kort till spelare
+
+    // Skapar en metod för att dra kort till spelare
     public function drawCard()
     {
         return array_shift($this->cards);
     }
 
-    // Skapar en metod för att hämta kortleken
+    /**
+     * @return Card[]
+     * Skapar en metod för att hämta kortleken 
+    */
     public function getCards()
     {
         return $this->cards;

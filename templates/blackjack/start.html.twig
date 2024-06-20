@@ -1,26 +1,52 @@
-
 {% extends "blackjack/game_base.html.twig" %}
 
 {% block title %}Blackjack Game{% endblock %}
 
 {% block body %}
-    <h1>Blackjack Game</h1>
 
-    <p>Player Score: {{ game.getPlayer().getScore() }}</p>
-    <p>Dealer Score: {{ game.getDealer().getScore() }}</p>
+<h1>Blackjack Game</h1>
 
-    {% if game.getGameOver() %}
-        <p>Game Over!</p>
-        <p>{{ game.getMessage() }}</p>
-    {% else %}
-        <form action="{{ path('game_hit') }}" method="post">
-            <input type="submit" value="Hit">
-        </form>
-        <form action="{{ path('game_stand') }}" method="post">
-            <input type="submit" value="Stand">
-        </form>
-        <form action="{{ path('game_surrender') }}" method="post">
-            <input type="submit" value="Surrender">
-        </form>
-    {% endif %}
+<p>Player Score: {{ game.getPlayer().getScore() }}</p>
+<p>Dealer Score: {{ game.getDealer().getScore() }}</p>
+
+{% if playerCards is defined and playerCards is not empty %}
+    <h2>Player's Cards:</h2>
+    <ul class="card-deck">
+    {% for card in playerCards %}
+        <div class="card">{{card.toHtml()|raw }}</div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No player cards found.</p>
+{% endif %}
+
+{% if dealerCards is defined and dealerCards is not empty %}
+    <h2>Dealer's Cards:</h2>
+    <ul class="card-deck">
+    {% for card in dealerCards %}
+        <div class="card-deck">
+        <div class="card">{{card.toHtml()|raw }}</div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No dealer cards found.</p>
+{% endif %}
+
+{% if game.getGameOver() %}
+    <p>Game Over!</p>
+    <p>{{ game.getMessage() }}</p>
+    <form action="{{ path('game_restart') }}" method="post">
+        <input type="submit" value="Restart Game">
+    </form>
+{% else %}
+    <form action="{{ path('game_hit') }}" method="post">
+        <input type="submit" value="Hit">
+    </form>
+    <form action="{{ path('game_stand') }}" method="post">
+        <input type="submit" value="Stand">
+    </form>
+    <form action="{{ path('game_surrender') }}" method="post">
+        <input type="submit" value="Surrender">
+    </form>
+{% endif %}
 {% endblock %}

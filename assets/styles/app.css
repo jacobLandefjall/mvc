@@ -161,13 +161,14 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 20px;
+    list-style-type: none;
 }
 
 .card {
-    width: 60x;
-    height: 60px;
+    width: 60px;
+    height: 100spx;
     margin: 5px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -177,6 +178,7 @@ nav ul li a:hover {
     box-shadow: 0 2x 4px rgba(0,0,0,0.1);
     text-align: center;
 }
+
 
 .spader {
     color: black;

@@ -8,6 +8,14 @@ class Card
     private $value;
     private $color;
 
+    private $suits = [
+        'hearts' => '♥',
+        'diamonds' => '♦',
+        'clubs' => '♣',
+        'spades' => '♠'
+    ];
+
+
     public function __construct($suit, $value)
     {
         $this->suit = $suit;
@@ -38,5 +46,15 @@ class Card
             return 'black';
         }
     }
- 
+
+    public function __toString()
+    {
+        return sprintf(
+            '<span style="color:%s">%s%s</span>',
+            $this->color,
+            $this->value,
+            $this->suits[$this->suit]
+        );
+    }
+
 }

@@ -68,6 +68,12 @@ class LuckyControllerTwig extends AbstractController
                 'namn' => 'API Draw',
                 'länk' => 'api_draw',
                 'innehåll' => 'En sida som drar ett eller flera kort från kortleken och presenterar kortet.'
+            ],
+            [
+                'namn' => 'API Game',
+                'länk' => 'api_game',
+                'innehåll' => 'Visar upp den aktuella ställningen för spelet BlackJack.'
+
             ]
         ];
 
@@ -183,5 +189,19 @@ class LuckyControllerTwig extends AbstractController
             'draw' => $draw,
             'deck' => count($deck)
         ]);
+    }
+    #[Route("/api/game", name: "api_game", methods: ["GET"])]
+    public function api_Game(Request $request, SessionInterface $session): JsonResponse
+    {
+        $game = $session->get('game');
+        $gameState = [
+            'gameOver' => $game->getGameOver(),
+            'playerScore' => $game->getPlayer()->getScore(),
+            'dealerScore' => $game->getDealer()->getScore(),
+            'playerCards' => $game->getPlayer()->getHand()->getCards(),
+            'dealerCards' => $game->getDealer()->getHand()->getCards(),
+        ];
+
+        return new JsonResponse($gameState);
     }
 }

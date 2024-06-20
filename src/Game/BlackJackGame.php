@@ -2,74 +2,143 @@
 
 // Skapar en class BlackJackGame i filen BlackJackGame.php
 
-
 namespace App\Game;
-
 
 class BlackJackGame
 {
     private $gameOver = false;
     private $player;
     private $dealer;
+    private $deck;
+    private $message;
 
-    public function __construct() {
+    public function __construct()
+    {
 
-        $deck = new Deck();
-        $deck->shuffleDeck();
+        $this->deck = new Deck();
+        $this->deck->shuffleDeck();
 
-        foreach($deck->getCards() as $card) {
-            echo (string)$card;
-            echo "<br>";
-        }
+        $this->player = new Player($this->deck);
+        $this->dealer = new Player($this->deck);
 
-        $this -> player = new Player($deck);
-        $this -> dealer = new Player($deck);
+        // Ger spelare två kort i början
+        $this->player->hit();
+        $this->player->hit();
+        $this->dealer->hit();
+        $this->dealer->hit();
     }
 
+    /**
+     * Metod för att hämta spelaren
+     * @return Player
+     */
     public function getPlayer()
     {
         return $this->player;
     }
 
+    /**
+     * Metod för att hämta dealern
+     * @return Player
+     */
     public function getDealer()
     {
         return $this->dealer;
     }
 
+    /**
+     * Metod för "hit" och om poäng överskrider 21
+     * @return void
+     */
+    public function playerHits()
+    {
+        if (!$this->gameOver && $this->player->canHit()) {
+            $this->player->hit();
+            if ($this->player->getScore() > 21) {
+                $this->gameOver = true;
+                $this->message = "Player busts! Dealer wins.";
+            }
+        }
+    }
+
+    /**
+     * Metod för att spelaren står
+     * @return void
+     */
+    public function playerStands()
+    {
+        $this->gameOver = true;
+        $this->dealerTurn();
+        if ($this->dealer->getScore() > 21) {
+            $this->message = "Dealer busts! Player wins.";
+        } else {
+            $this->message = $this->determineWinner();
+        }
+    }
+
+    /**
+     * Metod för att köra dealerns tur
+     * @return void
+     */
+    public function dealerTurn()
+    {
+        while ($this->dealer->getScore() < 17) {
+            $this->dealer->hit();
+        }
+    }
+
+    /**
+     * Metod för att bestämma vinnaren
+     * @return string
+     */
+    public function determineWinner()
+    {
+        $playerScore = $this->player->getScore();
+        $dealerScore = $this->dealer->getScore();
+        if ($playerScore > $dealerScore) {
+            return "Player wins with $playerScore against dealer's $dealerScore!";
+        } elseif ($playerScore < $dealerScore) {
+            return "Dealer wins with $dealerScore against player's $playerScore!";
+        } else {
+            return "It's a tie with both scoring $playerScore!";
+        }
+    }
+
+    /**
+     * Metod om spelet är över
+     * @return bool
+     */
     public function getGameOver()
     {
         return $this->gameOver;
     }
 
+    /**
+     * Metod för att hämta meddelande
+     * @return string
+     */
     public function getMessage()
     {
         return $this->message;
     }
-    // returnerar 1 om spelet är slut, o om ingen vinst händer
-    public function win($player, $dealer, $stand){
-        if($player > 21) {
-            echo "<div style='background-color:red; text-align:centet; color: Black; font-size: 26px; font-weight: bold;'>You Lose!</div>";
-            return 1;
-        }
-        else if ($dealer > 21){
-            echo "<div style='background-color:green; text-align:centet; color: Black; font-size: 26px; font-weight: bold;'>You Win!</div>";
-            return 1;
 
-        }
-        else if ($stand == 1){
-            if ($player > $dealer){
-               echo "<div style='background-color:green; text-align:center; color: black; font-size: 26px; font-weight: bold;'>You Win!</div>"; 
-                return 1;
-            }
-            else{
-                echo "<div style='background-color:red; text-align:center; color:black; font-size: 26px; font-weight: bold;'>You Lose!</div>";
-                return 1;
-            }
-        }
-        return 0;
+    /**
+     * Metod för att kolla om spelaren kan "hit"
+     * @return bool
+     */
+    public function canHit()
+    {
+        return $this->player->canHit();
     }
-    public function surrender() {
+
+    /**
+     * Metod för om spelaren ger upp
+     * @return void
+     */
+    public function playerSurrenders()
+    {
         $this->gameOver = true;
-        echo "<div style='background-color:red; text-align:center; color:black; font-size: 26px; font-weight: bold;'>You Lose!</div>";
+        $this->message = "Player surrenders! Dealer wins.";
     }
+
 }

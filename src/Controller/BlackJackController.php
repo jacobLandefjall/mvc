@@ -30,43 +30,81 @@ class BlackJackController extends AbstractController
         return $this->render('blackjack/dokumentation.html.twig');
     }
     #[Route("/game/start", name: "start", methods: ["GET"])]
-    public function playGame(): Response
+    public function playGame(SessionInterface $session): Response
     {
-        $deck = new Deck();
         $game = new BlackJackGame();
+        $session->set('game', $game);
 
         return $this->render('blackjack/start.html.twig', [
             'game' => $game,
+            'playerCards' => $game->getPlayer()->getHand()->getCards(),
+            'dealerCards' => $game->getDealer()->getHand()->getCards(),
         ]);
     }
     #[Route("/game/hit", name: "game_hit", methods: ["POST"])]
-    public function hit(SessionInterface $session): Response {
+    public function hit(SessionInterface $session): Response
+    {
         $game = $session->get('game');
-        $game->playerHits();
-        $session->set('game', $game);
-    
-        return $this->redirectToRoute('start');
+        if ($game === null) {
+            $game = new BlackJackGame();
+            $session->set('game', $game);
+        }
+
+        if ($game->getPlayer()->canHit() && !$game->getGameOver()) {
+            $game->playerHits();
+            $session->set('game', $game);
+        }
+
+        return $this->render('blackjack/start.html.twig', [
+            'game' => $game,
+            'playerCards' => $game->getPlayer()->getHand()->getCards(),
+            'dealerCards' => $game->getDealer()->getHand()->getCards(),
+        ]);
     }
-    
+
     #[Route("/game/stand", name: "game_stand", methods: ["POST"])]
-    public function stand(SessionInterface $session): Response {
+    public function stand(SessionInterface $session): Response
+    {
         $game = $session->get('game');
-        $game->playerStands();
-        $session->set('game', $game);
-    
-        return $this->redirectToRoute('start');
+        if ($game === null) {
+            $game = new BlackJackGame();
+            $session->set('game', $game);
+        }
+
+        if (!$game->getGameOver()) {
+            $game->playerStands();
+            $session->set('game', $game);
+        }
+
+        return $this->render('blackjack/start.html.twig', [
+            'game' => $game,
+            'playerCards' => $game->getPlayer()->getHand()->getCards(),
+            'dealerCards' => $game->getDealer()->getHand()->getCards(),
+        ]);
     }
-    
+
     #[Route("/game/surrender", name: "game_surrender", methods: ["POST"])]
-    public function surrender(SessionInterface $session): Response {
+    public function surrender(SessionInterface $session): Response
+    {
         $game = $session->get('game');
-        $game->playerSurrenders();
-        $session->set('game', $game);
-    
-        return $this->redirectToRoute('start');
+        if ($game !== null) {
+            $game->playerSurrenders();
+            $session->set('game', $game);
+        }
+
+        return $this->render('blackjack/start.html.twig', [
+            'game' => $game,
+            'playerCards' => $game->getPlayer()->getHand()->getCards(),
+            'dealerCards' => $game->getDealer()->getHand()->getCards(),
+        ]);
     }
-    #[Route("/test", name: "test_route")]
-    public function test(): Response {
-        return new Response("Test route works!");
+
+    #[Route("/game/restart", name: "game_restart", methods: ["POST"])]
+    public function restart(SessionInterface $session): Response
+    {
+        $game = new BlackJackGame();
+        $session->set('game', $game);
+
+        return $this->redirectToRoute('start');
     }
 }

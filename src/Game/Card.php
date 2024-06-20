@@ -3,43 +3,103 @@
 namespace App\Game;
 
 class Card
-{   private $emoji; // emoijs for som kortidentifiering
+{
     private $value; // värde för kortet
+    private $color; // färg för kortet
+    private $suit; // rank för kortet
 
+    private $suits = [
+        'hearts' => '♥',
+        'diamonds' => '♦',
+        'clubs' => '♣',
+        'spades' => '♠'
+    ];
 
-    public function __construct($emoji) {
-        $this->emoji = $emoji;
-        $this->value = $this->cardValue($emoji);
+    /**
+     * Konstruktor
+     * @param string $suit
+     * @param string $value
+     */
+    public function __construct($suit, $value)
+    {
+        $this->suit = $suit;
+        $this->value = $value;
+        $this->color = $this->setColor($suit);
     }
 
-    public function allEmojis() {
-        return ["🃑", "🃒", "🃓","🃔","🃕","🃖","🃗","🃘","🃙",
-                "🃚","🃜","🃝","🃞","🃎","🃍","🃌","🃊","🃉","🃈","🃇","🃆","🃅","🃄","🃃","🃂",
-                "🃁","🂾","🂽","🂼","🂺","🂹","🂸","🂷","🂶","🂵","🂴","🂳","🂲","🂱","🂡","🂢","🂣",
-                "🂤","🂥","🂦","🂧","🂨","🂩","🂪","🂬","🂭","🂮"
-            ];
+    /**
+     * Sätter färgen på korten
+     * @param string $suit
+     */
+    private function setColor($suit)
+    {
+        if ($suit == 'hearts' || $suit == 'diamonds') {
+            return 'red';
+        } else {
+            return 'black';
+        }
     }
 
-    public function cardValue($emoji) {
-        
-        $values = [
-            "🃑" => 11, "🃒" => 2, "🃓" => 3, "🃔" => 4, "🃕" => 5, "🃖" => 6, "🃗" => 7, "🃘" => 8, "🃙" => 9,
-            "🃚" => 10, "🃜" => 10, "🃝" => 10, "🃞" => 10, "🃎" => 11, "🃍" => 2, "🃌" => 3, "🃊" => 4, "🃉" => 5, "🃈" => 6, "🃇" => 7, "🃆" => 8, "🃅" => 9, "🃄" => 10, "🃃" => 10, "🃂" => 10,
-            "🃁" => 11, "🂾" => 2, "🂽" => 3, "🂼" => 4, "🂺" => 5, "🂹" => 6, "🂸" => 7, "🂷" => 8, "🂶" => 9, "🂵" => 10, "🂴" => 10, "🂳" => 10, "🂲" => 10, "🂱" => 11, "🂡" => 2, "🂢" => 3, "🂣" => 4,
-            "🂤" => 5, "🂥" => 6, "🂦" => 7, "🂧" => 8, "🂨" => 9, "🂩" => 10, "🂪" => 10, "🂬" => 10, "🂭" => 10, "🂮" => 10
-        ];
-        return $values[$emoji] ?? null; // Returnerar null om kortet inte finns i arrayen
+    /**
+     * Kollar om kortet är ett ess
+     * @return bool
+     */
+    public function isAce()
+    {
+        return $this->value == "A";
+    }
+    /**
+     * Hämtar värdet
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 
-    public function isAce() {
-        // Returnerar true om kortet är ett ess
-        return in_array($this->emoji, ["🃑", "🃎", "🃁", "🂱"]);
+    /**
+     * Returnerar värdet på kortet
+     * @return string
+     */
+    public function getCardValue()
+    {
+        return $this->value;
     }
 
-    public function __toString() {
-        return $this->emoji;
+    /**
+     * Returnerar ranken på kortet
+     * @return string
+     */
+    public function getSuit()
+    {
+        return $this->suit;
     }
 
+    /**
+     * Returnerar färgen på kortet
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function __toString()
+    {
+        return $this->value . $this->suits[$this->suit];
+    }
+
+    /**
+     * Returnerar kortet som HTML
+     * @return string
+     */
+    public function toHtml()
+    {
+        return sprintf(
+            '<span style="color: %s;">%s%s</span>',
+            $this->color,
+            $this->value,
+            $this->suits[$this->suit]
+        );
+    }
 }
-
-    

@@ -6,42 +6,111 @@ class Player
 {
     private $hand;
     private $stand = false;
+    private bool $lost = false;
+    private $deck;
+    private $hitCount = 0;
 
     // Konstruktor
     public function __construct(Deck $deck)
     {
         $this->hand = new Hand();
-       }
+        $this->deck = $deck;
+    }
 
-    // Metod för "Stand" 
+    /**
+     * @return bool
+     */
     public function stand()
     {
         $this->stand = true;
     }
 
+    /**
+     * @return bool
+     */
     public function isStanding()
     {
         return $this->stand;
     }
 
-    // Metod för "Hit"
-    public function hit(Deck $deck)
+    /**
+     * Metod "hit"
+     * @return void
+     */
+    public function hit()
     {
-        if ($this->stand) {
-            throw new \Exception("Cannot hit after standing.");
+        if ($this->hitCount < 4 && $this->getScore() < 21) {
+            $this->hand->addCard($this->deck->drawCard());
+            $this->hitCount++;
+            if ($this->getScore() > 21) {
+                $this->lost = true;
+            }
         }
-        $this->hand->addCard($deck->drawCard());
     }
 
-    // Metod för att ta kort
-    public function getCard($card){
+    /**
+     * @return bool
+     */
+    public function getCards()
+    {
+        return $this->hand->getCards();
+    }
+
+    /**
+     * @return bool
+     * Hit för att kunna "hit"
+     */
+    public function canHit()
+    {
+        return $this->getScore() < 21;
+    }
+
+    /**
+     *  Metod för att ta kort
+     * @param Card $card
+     * @return void
+     */
+    public function getCard($card)
+    {
 
         $this->hand->addCard($card);
     }
 
-    // Metod för att räkna ut handens värde
-    public function getScore(){
+    /**
+     * @return bool
+     */
+    public function getHand()
+    {
+        return $this->hand;
+    }
+
+    /**
+     * Metod för att räkna ut handens värde
+     * @return int
+     */
+    public function getScore()
+    {
         return $this->hand->getHandValue();
     }
 
+    /**
+     * @return bool
+     * Ser om handen har blackjack
+     */
+    public function hasBlackjack()
+    {
+        return $this->hand->hasBlackjack();
+    }
+
+    /**
+     * @return bool
+     * Checkar om poäng är över 21 och sätter lost till true
+     */
+    public function addCard(Card $card)
+    {
+        $this->hand->addCard($card);
+        if ($this->getScore() > 21) {
+            $this->lost = true;
+        }
+    }
 }
