@@ -5,7 +5,7 @@ namespace App\Game;
 /**
  * Hand class
 * @property array $cards metod för att lägga till kort i handen
- 
+
  */
 class Hand
 {

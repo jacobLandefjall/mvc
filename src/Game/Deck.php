@@ -55,7 +55,7 @@ class Deck
 
     /**
      * @return Card[]
-     * Skapar en metod för att hämta kortleken 
+     * Skapar en metod för att hämta kortleken
     */
     public function getCards()
     {

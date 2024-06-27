@@ -1,9 +1,10 @@
 <?php
 
-// Skapar en class BlackJackGame i filen BlackJackGame.php
-
 namespace App\Game;
 
+/**
+ * Klass för att hanterar <blackjack-spelet
+ */
 class BlackJackGame
 {
     private $gameOver = false;

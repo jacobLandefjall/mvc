@@ -113,4 +113,15 @@ class Player
             $this->lost = true;
         }
     }
+
+    /**
+     * Kontrollerar om spelaren har förlorat.
+     * @return bool
+     */
+    public function lost()
+    {
+        // Implementera logiken för att avgöra om spelaren har förlorat.
+        // Detta är ett exempel och kan behöva anpassas baserat på hur du hanterar poäng eller andra villkor för förlust.
+        return $this->getScore() > 21;
+    }
 }
