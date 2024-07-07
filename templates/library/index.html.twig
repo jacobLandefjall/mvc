@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mitt Bibliotek{% endblock %}
+
+{% block body %}
+
+<h1>Välkommen till biblioteket</h1>
+
+<p class="text-block"> Här finner du ett förslag på böcker, dessutom länkar som visar alla böcker och kan skapa nya.<p>
+<ul>
+    <div><a href="{{ path('library_all') }}" class="button">Visa alla böcker</a></div>
+    <p></p>
+    <div><a href="{{path('library_create') }}" class="button">Skapa en bok</a></div>
+
+</ul>
+
+<div>
+    <h3>The Hobbit</h3>
+    <p>Författare: J.R.R. Tolkien</p>
+    <img src="{{ asset('build/images/hobbit.jpg') }}" alt="Bok bild" style="width: 180px; height: auto;">
+</div>
+
+<div>
+    <h3>Harry Potter and the prisoner of Azkaban</h3>
+    <p>Författare: J.K. Rowling</p>
+    <img src="{{ asset('build/images/harrypotter.jpg') }}" alt="Bok bild" style="width: 180px; height: auto;">
+</div>
+
+<div>
+    <h3>En man som heter Ove</h3>
+    <p>Författare: Fredrik Backman</p>
+    <img src="{{ asset('build/images/ove.jpg') }}" alt="Bok bild" style="width: 180px; height: auto;">
+</div>
+
+
+{% endblock %}

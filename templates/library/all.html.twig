@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alla Böcker{% endblock %}
+
+{% block body %}
+    <h1>Alla Böcker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Bok</th>
+                <th>Författare</th>
+                <th>ISBN</th>
+                <th>Bild</th>
+                <th>Detaljer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr class="text-block">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.isbn }}</td>
+                    <td><img src="{{ asset('images/' ~ book.image) }}" alt="Tom bild" width="100"></td>
+                    <td><a href="{{ path('library_read', { id: book.id }) }}">Visa Detaljer</a></td>
+                    <td>
+                        <a href="{{ path('library_update', { id: book.id }) }}">Uppdatera</a>
+                        <a></a>
+                        <a href="{{ path('library_delete', { id: book.id }) }}" onclick="return confirm('Vill du radera denna bok?');">Radera</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<div style="text-align: left; margin-top: 100px;">
+    <table>
+        <tr>
+            <td><a href="{{ path('library_reset') }}" class="button">Återställ databasen</a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

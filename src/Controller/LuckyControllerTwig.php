@@ -8,9 +8,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\BookRepository;
 
 class LuckyControllerTwig extends AbstractController
 {
+    private $entityManager;
+    private $bookRepository;
+
+    public function __construct(EntityManagerInterface $entityManager, BookRepository $bookRepository)
+    {
+        $this->entityManager = $entityManager;
+        $this->bookRepository = $bookRepository;
+    }
+
     #[Route("/lucky", name: "lucky_number")]
     public function number(): Response
     {
@@ -73,7 +84,16 @@ class LuckyControllerTwig extends AbstractController
                 'namn' => 'API Game',
                 'länk' => 'api_game',
                 'innehåll' => 'Visar upp den aktuella ställningen för spelet BlackJack.'
-
+            ],
+            [
+                'namn' => 'API Books',
+                'länk' => 'api_books',
+                'innehåll' => 'Visar upp alla böcker i biblioteket.'
+            ],
+            [
+                'namn' => 'API ISBN',
+                'länk' => 'api_isbn',
+                'innehåll' => 'Se en bok via dess ISBN nummer.'
             ]
         ];
 
@@ -203,5 +223,43 @@ class LuckyControllerTwig extends AbstractController
         ];
 
         return new JsonResponse($gameState);
+    }
+
+    #[Route("/api/library/books", name: "api_books", methods: ["GET"])]
+    public function showAllBooks(): JsonResponse
+    {
+        $books = $this->bookRepository->findAll();
+        $bookList = [];
+
+        foreach ($books as $book) {
+            $bookList[] = [
+                'title' => $book->getTitle(),
+                'author' => $book->getAuthor(),
+                'isbn' => $book->getIsbn(),
+                'image' => $book->getImage()
+            ];
+        }
+
+        return new JsonResponse($bookList);
+    }
+
+    #[Route("/api/library/book/{isbn}", name: "api_isbn", methods: ["GET"])]
+    public function showBookIsbn(Request $request): JsonResponse
+    {
+        $isbn = $request->get('isbn');
+        $book = $this->bookRepository->findOneByIsbn($isbn);
+
+        if (!$book) {
+            return new JsonResponse(['Boken hittades inte! Sök efter ett giltigt ISBN nummer.'], 404);
+        }
+
+        $bookData = [
+            'title' => $book->getTitle(),
+            'author' => $book->getAuthor(),
+            'isbn' => $book->getIsbn(),
+            'image' => $book->getImage()
+        ];
+
+        return new JsonResponse($bookData);
     }
 }

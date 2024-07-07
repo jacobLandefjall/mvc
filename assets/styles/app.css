@@ -241,3 +241,26 @@ nav ul li a:hover {
     border-radius: 20px; /* Runda hörn */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Skugga */
 }
+
+.button {
+    background-color: rgb(245, 250, 235);
+    color: rgb(34, 34, 34);
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    display: incline-block;
+    font-size:16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.button:hover {
+    color: white;
+    background-color: rgb(34, 34, 34);
+}
+
+table tr.text-block td {
+    padding: 10px;
+}
+

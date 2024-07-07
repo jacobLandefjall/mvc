@@ -9,6 +9,8 @@
             <li><a href="#kmom01">Kmom01</a></li>
             <li><a href="#kmom02">Kmom02</a></li>
             <li><a href="#kmom03">Kmom03</a></li>
+            <li><a href="#kmom04">kmom04</a></li>
+            <li><a href="#kmom05">kmom05</a></li>
         </ul>
     </nav>
         <section id="kmom01">
@@ -86,6 +88,78 @@
 
         <p class="text-block">TIL: Kursmoment 3 har gett kunskap för psuedokod och flödesdiagram. Hur viktigt det kan vara att prata, planera och strukturera kod.
         BlackJack spelet var en rolig uppgift, det var att skapa ett kortspel på ett annorlunda sätt, på ett objektorienterat sätt.
-        Jag fick utökad kunskap för PHP med hur vi kan problemlösa, designa och implementera. Dessutom hur vi kan skriva "snyggare kod" med hjälp av olika kodstiler och strukturer.
+        Jag fick utökad kunskap för PHP med hur vi kan problemlösa, designa och implementera. Dessutom hur vi kan skriva "snyggare kod" med hjälp av olika kodstiler och strukturer.<p>
         
+        <section id="kmom04">
+        <h2>Kmom04: Enhetstester</h2>
+
+        <p class="text-block"> Min upplevelse med att skriva kod som testar annan kod var både nervöst och lite skrämmande, eftersom jag har inte jobbat med enhetstester förut och har inte mycket förkunskaper innan min tid på BTH. 
+        Men det är roligt att se framsteg i skolan och jag fann det roligt och nyttigt med detta kursmoment. strukturen hur testning av vår kod gör den tydlig och lättläst. Det hjälper en hel del av att använda sig av kommentarer som förklarar testerna och koden. PHPunit upplevdes vara relativt simpelt att använda. 
+        funktionen låter oss automatisera kodning av vår kod, vilket minskar manuell felsökning och testar alla test tillsammans.<p>
+
+        <p class="text-block">Kodtäckningen kunde har blivit bättre, men fann att resultatet blev bra och jag la ner effektiv tid för att uppnå 88% gällande "Lines" och 83% till "Code Coverage". 
+        Resultatet blev relativt nära 90% men nästa gång är målet att uppnå 90% eller högre kodtäckning.</p>
+
+        <p class="text-block">Testerna gällande BlackJack spelet och klasserna ser och fungerar i överlag bra.
+         Klasserna har många viktiga delar av spelet. Testerna använder sig av PHPunit som hanterar och täcker flera funktioner i varje klass. Klasserna använder sig av "Mockning" som underlättar koden och isolerar tester från beroenden och testerna använder sig av mycket olika assertions som "assertEquals, assertTrue och assertCount" för olika funktioner i koden. Testnamn och kommentarer är tydliga och gör det klart vad varje test ska utföra och verifiera. Självklart kan testerna alltid förbättras. 
+        Exempel på detta kan vara minska kommentarer och göra koden inte lika överflödig.Testerna kan ha ännu fler testfall för att täcka andra scenarier, som vad händer om korten tar slut i kortleken.<p>
+
+        <p class="text-block"> Jag valde att göra min kod för mitt BlackJack spel mer testbar och fungerade bra med mina test och felhanteringar. Koden för BlackJack spelet var jag nöjd över och vågade inte ändra allt för mycket. 
+        Men med lite förbättringar som fler kommentarer, snyggare kodstruktur och lite ny kod blev det ännu bättre. <p>
+
+         <p class="text-block"> Testbar kod är en viktig för en snygg och ren kod. 
+         Därför att testbar kod bidrar till att programmet och koden är lätt att underhålla och utöka. Snygg och ren kod anser jag vara snyggt uppdelad i moduler, klasser eller funktioner som gör det lättare att testa varje enhet. Mockning bidrar till en ren kod genom att isolera koden som testat från beroenden. Detta underlättar att testa kod i isolation och ser över dess förhållanden. 
+         Det finns flera olika sätt att bidra till en snygg och ren kod med hjälp av testbar kod, det är något vi bör fokusera på. Det kommer underlätta att felhanteringar och mycket annat, dessutom bidrar det till en lättare kod att förstå som andra studenter, medarbetare eller lärare.<p>
+
+          <p class="text-block">TIL:Kursmoment 4 Enhetstester har bidragit med helt ny kunskap.
+           Jag har fått lära mig att enhetstester bidrar till utökad kvalitet, hållbarhet och lättläst kod. Vi utvecklare har lättare att åtgärda fel eller buggar med hjälp av att testa vår kod. Enhetstester gör att vi skriver en mer sammanhängande kod, som leder till bättre upplägg och snyggare kod. 
+          Dessutom ger det en förbättrad samarbetsförmåga, därför att testerna inte behövs testas manuellt och ändringar inte påverkar varandras arbete negativt.</p>
+           
+          <p class="text-block"> Mocka ett objekt har vi gått igenom. Detta göra det möjligt att testa enheter utan att påverkas av beroenden. Mockning är särskilt användbart när koden testat har beroenden på komponenter som är lite svårare att inkludera i enhetstester.
+          <p class="text-block"> Vi har dessutom gått igenom PHPunit. Vilket är ett ramverk för köra enhetstester. PHPunit gör det enkelt att automatisera testning av kod och säkerställer att koden fungerar som förväntat. 
+          funktionen med PHPunit låter oss definiera testfall i PHP-klasser som körs för att verifiera att allt fungerar bra.</p>
+
+            <p class="text-block"> Till sist har vi lärt oss att testbar kod bidrar till en snyggare och renare kod. För att göra en kod testbar, bör man gör koden ren och snygg för att undvika felsökning och ge koden tydliga namn. Läsbarheten gör det lättare förstå både för en själv och för andra utvecklare. 
+            Med hjälp av en tydlig struktur och kommentarer. Det finns flera aspekter till en snygg kod, men främst är det att koden ska vara enkel, lättläst, lätt att felhantera.<p>
+
+            <section id="kmom05">
+            <h2>Kmom05: ORM/Databas</h2>
+            <p class="text-block">I detta kursmoment har vi jobbat med Doctrine i Symfony. Att arbeta med övningen var både lärorikt och givande. Att jobba igenom övningen och se över föreläsningen
+            underlättade övningen och bidrog till en förbättrad förståelse för ORM.</p>
+            <p class="text-block">Jag valde att jobba med SQLite, vilket jag inte har arbetat med tidigare, men installera och komma igång var relativt simpelt.
+            Från skillnad på databas kursen där vi arbetade med MariaDB vilket var mer krävande, SQLite krävde endast några få kommandon för att skapa och hantera databasen.<p>
+
+            <p class="text-block">Under övningen och Föreläsningen gick vi igenom i princip hur vi kan bygga vår applikation. Applikationen är byggd med Symfony ramverket som hanterar flera funktioner för biblioteket.
+            Övningen gick igenom hur vi skapar och använder 'Entity' och jag använder en Entity klass som representerar en bok i databasen. Klassen innehåller bokens id, författare, titel, isbn nummer och bild.
+            För att minska koden i kontrollen skapades en mapp 'Bibliotek' och filen 'CreateBook' för att skapa nya böcker. Formuläret innehåller bokens titel, författare, isbn nummer och bild för att skapa helt ny bok.
+            Tanken kring kontrollen var att följa hur vi gjorde i övningen, simpelt men effektivt. Kontrollen 'BibliotekController' hanterar alla rutter för applikationen och interagerar med databasen.
+            Kontrollen hämtar och visar böckerna, visar, uppdaterar, tar bort böcker och återställer hela databasen till dess ursprungliga innehåll.</p>
+            <p class="text-block"> Användargränssnittet är en viktig del i applikationen. Den är byggd med hjälp av Twig filer som hanterar flera viktiga sidor.
+            Twig filerna visar alla böcker i en HTML tabell, visar detaljer för en bok, skapar en ny bok och ger nya detaljer, uppdaterar detaljer för en skapad bok och kan återställa databasen.
+            Applikationen ger bra grund för att hantera bibliotek och lätt att hantera.<p>
+
+            <p class="text-block">Jobba med ORM i CRUD gick bättre än förväntat. CRUD i mySQL från databas kursen fann jag vara mer klurigt och utmanande. ORM i CRUD var tydligt, lättare att förstå och roligare.
+            Återigen övningen och föreläsningen bidrog till förbättrad förståelse och underlättade kursmomentet. Målet med CRUD i applikation var få den relativt lik och funktionell som övningen.</p>
+            <p class="text-block"> Min Symfony applikation har en balanserad av CRUD metoder som är enkel och tydlig. Det hanterar en ren och underhållbar kod.
+            Jämförelse med SQL frågor i koden kan bidra till mer kontroll och bättre prestanda, men gör koden mer komplex och svårare att underhålla. </p>
+
+            <p class="text-block">Objekt-Relational Mapping (ORM) har visats vara effektivt och lärorikt att jobba med. Verktyget underlättar skapandet av rader i en databas, dessutom ger ett objekt dess egenskaper till kolumner i databastabeller och hanterar create,read,update,delete på ett objektorienterat sätt.
+            ORM bidrar till en lättare underhållen kod för att kunna jobba med objekt istället för SQL frågor. Verktyget bidrar även till en lättare kod att förstå eftersom den är skriven på ett objektorienterat sätt.
+            Som Doctrine erbjuder ORM enkelhet och en kod som är objektorienterat, dock kan jag se fler fördelar med SQL frågor som vi lärde oss i databas kursen. Rena SQL frågor jobbar vi direkt med databasen som ger oss full kontroll över koden, ökad prestanda och bidrar en lättare kod att felsöka.
+            Just nu föredrar jag att jobba med ORM med det vi har lärt oss. Det bidrar till en lättare kod att förstå och hantera från skillnad på de överväldiga SQL frågorna.<p>
+            
+              <p class="text-block">TIL: I detta kursmoment har jag lärt mig arbeta med ORM och databaser. Vilka fördelar det finns med objektorienterat PHP för att interagera med databaser.
+              ORM har visats vara effektivt och bidra till många fördelar för att skapa, läsa, uppdatera och radera data.
+              Kursmomentet gick igenom hur vi skapr en applikation för ett bibliotek med CRUD funktioner på ett enkelt sätt.
+              En Jämförelse mellan ORM och rena SQL frågor är hur vi kan jobba mot databasen, beroende på behov och krav.
+              Tanken kring databas är lite skrämmande och har varit lite nervöst efter datbas kursen, med jag har fått en djupare förståelse för hur man kan bygga och hantera datbaser i 
+              en applikation med hjälp av Symfony och ORM. Sammanfattningsvis har vi lärt oss att skapa ren och underhållbar kod på ett objektorienterat sätt.
+              <p>
+
+             
+
+
+
+
+
 {% endblock %}

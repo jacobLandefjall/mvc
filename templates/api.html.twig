@@ -3,12 +3,17 @@
 {% block title %}api{% endblock %}
 
 {% block body %}
-    <h1>Sammanställning av alla JSON routes</h1>
-    {% for route in apiRoutes %}
-        <div>
-            <h2>{{ route.namn }}</h2>
+    <h1>Sammanställning av alla API routes</h1>
+{% for route in apiRoutes %}
+    <div>
+        <h2>{{ route.namn }}</h2>
+        {% if route.länk == 'api_isbn' %}
+            <!-- Example ISBN value '1234567890' is used here; replace it with the actual ISBN value needed -->
+            <p class="text-block"><a href="{{ path(route.länk, {'isbn': '1234567890'}) }}">Länk: {{ route.länk }}</a></p>
+        {% else %}
             <p class="text-block"><a href="{{ path(route.länk) }}">Länk: {{ route.länk }}</a></p>
-            <p class="text-block">Innehåll: {{ route.innehåll }}</p>
-        </div>
-    {% endfor %}
+        {% endif %}
+        <p class="text-block">Innehåll: {{ route.innehåll }}</p>
+    </div>
+{% endfor %}
 {% endblock %}
