@@ -152,7 +152,37 @@
               ORM har visats vara effektivt och bidra till många fördelar för att skapa, läsa, uppdatera och radera data.
               Kursmomentet gick igenom hur vi skapr en applikation för ett bibliotek med CRUD funktioner på ett enkelt sätt.
               En Jämförelse mellan ORM och rena SQL frågor är hur vi kan jobba mot databasen, beroende på behov och krav.
-              Tanken kring databas är lite skrämmande och har varit lite nervöst efter datbas kursen, med jag har fått en djupare förståelse för hur man kan bygga och hantera datbaser i 
+              Tanken kring databas är lite skrämmande och har varit lite nervöst efter data<h2>Kmom05: ORM/Databas</h2>
+            <p class="text-block">I detta kursmoment har vi jobbat med Doctrine i Symfony. Att arbeta med övningen var både lärorikt och givande. Att jobba igenom övningen och se över föreläsningen
+            underlättade övningen och bidrog till en förbättrad förståelse för ORM.</p>
+            <p class="text-block">Jag valde att jobba med SQLite, vilket jag inte har arbetat med tidigare, men installera och komma igång var relativt simpelt.
+            Från skillnad på databas kursen där vi arbetade med MariaDB vilket var mer krävande, SQLite krävde endast några få kommandon för att skapa och hantera databasen.<p>
+
+            <p class="text-block">Under övningen och Föreläsningen gick vi igenom i princip hur vi kan bygga vår applikation. Applikationen är byggd med Symfony ramverket som hanterar flera funktioner för biblioteket.
+            Övningen gick igenom hur vi skapar och använder 'Entity' och jag använder en Entity klass som representerar en bok i databasen. Klassen innehåller bokens id, författare, titel, isbn nummer och bild.
+            För att minska koden i kontrollen skapades en mapp 'Bibliotek' och filen 'CreateBook' för att skapa nya böcker. Formuläret innehåller bokens titel, författare, isbn nummer och bild för att skapa helt ny bok.
+            Tanken kring kontrollen var att följa hur vi gjorde i övningen, simpelt men effektivt. Kontrollen 'BibliotekController' hanterar alla rutter för applikationen och interagerar med databasen.
+            Kontrollen hämtar och visar böckerna, visar, uppdaterar, tar bort böcker och återställer hela databasen till dess ursprungliga innehåll.</p>
+            <p class="text-block"> Användargränssnittet är en viktig del i applikationen. Den är byggd med hjälp av Twig filer som hanterar flera viktiga sidor.
+            Twig filerna visar alla böcker i en HTML tabell, visar detaljer för en bok, skapar en ny bok och ger nya detaljer, uppdaterar detaljer för en skapad bok och kan återställa databasen.
+            Applikationen ger bra grund för att hantera bibliotek och lätt att hantera.<p>
+
+            <p class="text-block">Jobba med ORM i CRUD gick bättre än förväntat. CRUD i mySQL från databas kursen fann jag vara mer klurigt och utmanande. ORM i CRUD var tydligt, lättare att förstå och roligare.
+            Återigen övningen och föreläsningen bidrog till förbättrad förståelse och underlättade kursmomentet. Målet med CRUD i applikation var få den relativt lik och funktionell som övningen.</p>
+            <p class="text-block"> Min Symfony applikation har en balanserad av CRUD metoder som är enkel och tydlig. Det hanterar en ren och underhållbar kod.
+            Jämförelse med SQL frågor i koden kan bidra till mer kontroll och bättre prestanda, men gör koden mer komplex och svårare att underhålla. </p>
+
+            <p class="text-block">Objekt-Relational Mapping (ORM) har visats vara effektivt och lärorikt att jobba med. Verktyget underlättar skapandet av rader i en databas, dessutom ger ett objekt dess egenskaper till kolumner i databastabeller och hanterar create,read,update,delete på ett objektorienterat sätt.
+            ORM bidrar till en lättare underhållen kod för att kunna jobba med objekt istället för SQL frågor. Verktyget bidrar även till en lättare kod att förstå eftersom den är skriven på ett objektorienterat sätt.
+            Som Doctrine erbjuder ORM enkelhet och en kod som är objektorienterat, dock kan jag se fler fördelar med SQL frågor som vi lärde oss i databas kursen. Rena SQL frågor jobbar vi direkt med databasen som ger oss full kontroll över koden, ökad prestanda och bidrar en lättare kod att felsöka.
+            Just nu föredrar jag att jobba med ORM med det vi har lärt oss. Det bidrar till en lättare kod att förstå och hantera från skillnad på de överväldiga SQL frågorna.<p>
+            
+              <p class="text-block">TIL: I detta kursmoment har jag lärt mig arbeta med ORM och databaser. Vilka fördelar det finns med objektorienterat PHP för att interagera med databaser.
+              ORM har visats vara effektivt och bidra till många fördelar för att skapa, läsa, uppdatera och radera data.
+              Kursmomentet gick igenom hur vi skapar en applikation för ett bibliotek med CRUD funktioner på ett enkelt sätt.
+              En Jämförelse mellan ORM och rena SQL frågor är hur vi kan jobba mot databasen, beroende på behov och krav.
+              Tanken kring databas är lite skrämmande och har varit lite nervöst efter databas kursen, med jag har fått en djupare förståelse för hur man kan bygga och hantera databaser i 
+              en applikation med hjälp av Symfony och ORM. Sammanfattningsvis har vi lärt oss att skapa ren och underhållbar kod på ett objektorienterat sätt.bas kursen, med jag har fått en djupare förståelse för hur man kan bygga och hantera databaser i 
               en applikation med hjälp av Symfony och ORM. Sammanfattningsvis har vi lärt oss att skapa ren och underhållbar kod på ett objektorienterat sätt.
               <p>
 

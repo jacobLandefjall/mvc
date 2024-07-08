@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1720164369">
-  <project timestamp="1720164369">
+<coverage generated="1720435885">
+  <project timestamp="1720435885">
     <file name="/home/jaclan15/dbwebb-kurser/mvc/me/report/src/Bibliotek/CreateBook.php">
       <class name="App\Bibliotek\CreateBook" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="11" coveredelements="0"/>
@@ -741,7 +741,7 @@
     </file>
     <file name="/home/jaclan15/dbwebb-kurser/mvc/me/report/src/Game/BlackJackGame.php">
       <class name="App\Game\BlackJackGame" namespace="global">
-        <metrics complexity="18" methods="11" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="32" elements="45" coveredelements="41"/>
+        <metrics complexity="18" methods="11" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="30" elements="45" coveredelements="38"/>
       </class>
       <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
       <line num="19" type="stmt" count="7"/>
@@ -756,12 +756,12 @@
       <line num="38" type="stmt" count="4"/>
       <line num="45" type="method" name="getDealer" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="47" type="stmt" count="3"/>
-      <line num="54" type="method" name="playerHits" visibility="public" complexity="4" crap="4" count="1"/>
+      <line num="54" type="method" name="playerHits" visibility="public" complexity="4" crap="5.02" count="1"/>
       <line num="56" type="stmt" count="1"/>
       <line num="57" type="stmt" count="1"/>
       <line num="58" type="stmt" count="1"/>
-      <line num="59" type="stmt" count="1"/>
-      <line num="60" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
       <line num="69" type="method" name="playerStands" visibility="public" complexity="2" crap="2.03" count="1"/>
       <line num="71" type="stmt" count="1"/>
       <line num="72" type="stmt" count="1"/>
@@ -788,7 +788,7 @@
       <line num="139" type="method" name="playerSurrenders" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="141" type="stmt" count="1"/>
       <line num="142" type="stmt" count="1"/>
-      <metrics loc="146" ncloc="102" classes="1" methods="11" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="32" elements="45" coveredelements="41"/>
+      <metrics loc="146" ncloc="102" classes="1" methods="11" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="30" elements="45" coveredelements="38"/>
     </file>
     <file name="/home/jaclan15/dbwebb-kurser/mvc/me/report/src/Game/Card.php">
       <class name="App\Game\Card" namespace="global">
@@ -861,8 +861,8 @@
       <line num="35" type="stmt" count="16"/>
       <line num="36" type="stmt" count="16"/>
       <line num="38" type="stmt" count="16"/>
-      <line num="39" type="stmt" count="6"/>
-      <line num="40" type="stmt" count="6"/>
+      <line num="39" type="stmt" count="5"/>
+      <line num="40" type="stmt" count="5"/>
       <line num="41" type="stmt" count="16"/>
       <line num="42" type="stmt" count="13"/>
       <line num="43" type="stmt" count="12"/>
@@ -891,7 +891,7 @@
       <line num="43" type="stmt" count="9"/>
       <line num="44" type="stmt" count="9"/>
       <line num="45" type="stmt" count="9"/>
-      <line num="46" type="stmt" count="3"/>
+      <line num="46" type="stmt" count="1"/>
       <line num="54" type="method" name="getCards" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="56" type="stmt" count="4"/>
       <line num="63" type="method" name="canHit" visibility="public" complexity="1" crap="1" count="3"/>
@@ -990,6 +990,6 @@
       <line num="52" type="stmt" count="0"/>
       <metrics loc="80" ncloc="44" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
-    <metrics files="25" loc="2199" ncloc="1887" classes="24" methods="146" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="693" coveredstatements="92" elements="839" coveredelements="128"/>
+    <metrics files="25" loc="2199" ncloc="1887" classes="24" methods="146" coveredmethods="35" conditionals="0" coveredconditionals="0" statements="693" coveredstatements="90" elements="839" coveredelements="125"/>
   </project>
 </coverage>
