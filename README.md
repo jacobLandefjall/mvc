@@ -1,7 +1,9 @@
 # Välkommen till MVC kursen
 
 ![Profilbild](profilbild_fb.jpg)
-<<<<<<< HEAD
+[![kodkvalitet](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+[![Kodtäckning](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+[![byggstatus](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
 =======
 
 >>>>>>> 1209fec976a131be565444cd58d5129951caf393
