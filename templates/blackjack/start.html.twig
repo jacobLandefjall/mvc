@@ -32,7 +32,7 @@
     <p>No dealer cards found.</p>
 {% endif %}
 
-{% if game.getGameOver() %}
+{% if game.isGameOver() %}
     <p>Game Over!</p>
     <p>{{ game.getMessage() }}</p>
     <form action="{{ path('game_restart') }}" method="post">

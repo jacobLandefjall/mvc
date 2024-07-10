@@ -1,0 +1,165 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Metrics analys</h1>
+    </header>
+
+    <h2>Introduktion</h2>
+    <p class="text-block">För att förbättra kodkvaliteten kan vi använda oss av flera metoder. De sex C:na om kodkvalitet (6C), vilket ses som 6 steg till snyggare och bättre kod.
+    Dessa sex C:na består av Codestyle (Kodstil), Coverage (Täckning), Complexity (Komplexitet), Cohesion (Sammanhållning), Coupling (Koppling) och CRAP (Change Risk Anti-Patterns Score).<p>
+
+    <p class="text-block"><b>Codestyle</b> avser riktlinjer för hur en kod bör ser ut, inklusive namngivning och strukturering. Förbättrad kodstil påverkar kodkvaliteten genom att indentifiera fel snabbare och kan minska arbetet med kodbasen.
+    Till exmepel kan regelbunden användning av kamelnotation och tydliga namn bidrar till att koden blir mer läsbar.
+    Mätvärden som "Comment lines of code" anger antalet rader med kommenater. Ett högt antal kan indikera väl kommenterad kod.
+    Dessutom "Average comment weigh" en indikator på hur välkategoriserade kommentarerna är.
+    Vi som programmerare vill kunna skriva kod som andra programmerare kan läsa, förstå och undehålla för ett bättre sammarbete.<p>
+
+    <p class="text-block"><b>Coverage</b> även kallad "Kodtäckning", visar hur mycket av kodbasen som är testad via enhetstester. Det visar hur väl koden är testad.
+    Det finns hög och låg täckning. Högre täckning leder oftast till färre buggar och fel eftersom det är mer kod som testas, till skillnad på låg täckning.
+    Kodtäckning kan mätas genom antaletet enhetstester "Number of unit test".
+    Högre täckning är vikitgt och ligger mellan 70% och 100% täckning. Dock är också vikitgt att fokusera på meningsfulla tester än att sträva efter 100% täckning.<p>
+
+    <p class="text-block"><b>Complexity</b> mäter hur komplicerad koden är. Hur svår är koden att förstå, underhålla och ändra.
+    Vi mäter hur komplex koden är med "Average Difficulty" som visar medelsvårigheten att förstå. Samt "Average Weighted method count by class" viktad metodräkning per klass.
+    Bättre mätvärde gällande medelsvårigheten för koden är 0-10, vilket indikerar låg komplexitet och enkel kod att förstå.
+    Mäta komplexiteten av metoderna i en klass har ett bra mätvärde på 8-10, vilket är bra för underhållbarheten.
+    Det är vikitgt att mäta och hantera kodens komplexitet för kunna utveckla kodkvaliteten, underhållbarheten och minska risken för fel.<p>
+
+    <p class="text-block"><b>Cohesion</b> kod som refererar till förhållande till relaterade och fokuserade för varje enskild modul eller komponent.
+    Hög sammanhållning bidrar till att moduler eller komponenter gör specifika funktioner bättre och blir lättare att förstå, genom testa och modifiera.
+    Ett mått på hur mycket metoderna hör ihop "Lack of cohesion of methods" bör vara ett lägre värde för högre sammanhållning.<p>
+
+    <p class="text-block"><b>Coupling</b> definiterar hur mätning av moduler eller komponenter är beroende av varandra. Det finns både hög och låg koppling.
+    Mätning på genomsnittligt antal inkommande beroeden per plass är "Average afferent coupling" och för hur instabil en klass är "Average instability".
+    Vi strävar efter en låg koppling eftersom det innebär att förändringar i en modul eller komponent medför mindre risk att behöva en ändringar i en annan modul eller komponent.
+    Låg koppling bidrar till en mer underhållbar och flexibel kodbas.<p>
+
+    <p class="text-block"><b>CRAP</b> använder vi för att se över och bedöma risker för kodförändringar baserat på kodens täckning och Komplexitet.
+    För att indentifiera problem med vår kod som kan vara svår att underhålla och modifiera.
+    För att mäta risken för kodförändringar används "Average Cyclomatic complexity by class" tillsammans med kodtäckning för att beräkna CRAP Score.
+    påverkan på vår kodkvalitet beror det på om koden har hög eller låg CRAP Score.
+    Ett högt värde indikerar på hög risk, antingen på grund avv koden är dåligt testad eller den är komplex.
+    Lågt Crap Score innebär att koden är väl testad eller inte komplex, vilket bidrar till en minskad risken vid kodförändringar.
+    CRAP är ett verktyg som jälper oss utvecklare att hitta delar av kod som kan behöva en förbättring för att minska risken för framtida ändringar.<p>
+
+    <p class="text-block"><b>Resultat</b> <ul class="text-block">
+    <li>Comment lines of code mätvärde: 374</li>
+    <li>Average comment weigh mätvärde: 24.5%</li>
+    <li>Number of unit test: 6</li>
+    <li>Average Difficulty: 5.37</li>
+    <li>Average Weighted method count by class: 7.08</li>
+    <li>Lack of cohesion of methods: 1.65</li>
+    <li>Average afferent coupling: 0.88</li>
+    <li>Average instability: 0.63</li>
+    <li>Average Cyclomatic complexity by class: 3.73</li>
+</ul>
+<p>
+
+
+    <h2>Phpmetrics</h2>
+   <p class="text-block">Phpmetrics visualiserar mätvärden som anger och indikera en viss nivå av kvalitet på koden.
+   Mätvärderna blir analyserade för att hitta flaskhalsar och svaga punkter. Analysen innehåller även vissa
+   förbättringspotential i koden. Dessutom kommer det att visualiseras med någon representativ bild från rapporten.</p>
+
+   <p class="text-block">För att analysera och hitta flaskhalsar och svaga punkter i koden, behöver vi veta först vad det är för något.
+   Flaskhalsar och svaga punkter i kod är områden som kan orska problem med underhållbarhet och prestanda. Vi vill åtgärda dessa för att
+   hålla en hög kvalitet på kdoen och undvika framtida problem.</p>
+
+   <p class="text-block"><b>Flaskhalsar och svaga punkter</b> Exempel på klassser med hög komplexitet hittades: 
+<ul class="text-block">
+    <li>App\Game\Player Cyclomatic complexity: 5 Maintainability Index: 84.77 50.74</li>
+    <li>App\controller\Biblotekcontroller Cyclomatic complexity: 9 Maintainability Index: 63.81 </li>
+    <li>App\Game\BlackJackGame Cyclomatic complexity: 9 Maintainability Index: 78.3</li>
+</ul>
+   <p class="text-block">Dessa filer har en relativt hög komplexitet, samt gula eller röda cirklar indikerar att de är medel eller svåra att underhålla.<p>
+        <img src="{{ asset('build/images/metrics.png') }}" alt="metric" width=500" height="auto">
+
+   <p class="text-block"><b>App\Game\Player:</b> Med komplexitet på 5 är koden relativt komplex och underhållbarhet har ett värde på 84.77 indikerar att klassen är ganska lätt att underhålla.
+   <p class="text-block"><b>Förbättringspotential:</b> Genom att göra klassen mindre komplex kan koden delas upp i mindre och mer lätt hanterbara delar.
+   Vid större metoder, bör delarna brytas ut till nya metoder.
+   För en förbättrad underhållbarhet bör testtäckningen förbättas för att kunna utöka värdet och se till att varje metod har tydliga kommentarer.<p>
+
+    <p class="text-block"><b> App\Controller\BiblotekController:</b> Innhåller ett högre värde på 9 och gör klassen mycket komplex. underhållbarheten har ett värde på 63.81 vilket är ett medelvärde, vilket gör klassen svårare att underhålla.
+    <p class="text-block"><b>Förbättringspotential:</b> För att minska klassens komplexitet, kan det utföras genom att bryta ut delar av koden till seperata metoder eller klasser.
+    Dessutom en förbättrad dokumentation med kommenater och se över att det finns tester för alla funktioner i klassen.<p>
+
+    <p class="text-block"><b> App\Game\BlackJackGame:</b>  Med ett värde på 9 är denna klass mycket komplex. Dessutom ett värde på 78.3 för underhållbarhet är det acceptabelt men det finns förbättringspotential.
+    <p class="text-block"><b>Förbättringspotential:</b> Dela upp de stora metoder i mindre för att minska komplexiteten. Samt att förbättra och se att det finns enhetstester för att öka underhållbarheten.<p>
+
+
+    <h2>Scrutinizer</h2>
+    <p class="text-block"> Analysera koden med Scrutinizer, gör vi ett liknande sätt som med Phpmetrics. Scrutinizer är ett vektyg som analyserar kodkvalitet och hittar förbättringsområden.
+    Med Scrutinizer hittar vi information om kodens kvalitet, täckning och byggstatus.<p>
+
+    <h3>Scrutinizer Badgets</h3>
+<a href="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main">
+    <img src="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main" alt="kodkvalitet">
+</a>
+<a href="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main">
+    <img src="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main" alt="Kodtäckning">
+</a>
+<a href="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main">
+    <img src="https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/build.png?b=main" alt="byggstatus">
+</a>
+        <p class="text-block"><b>Scrutinizer:</b> Visar kodkvaliteten baserat på Scrutinizers analys och gav resultatet 10, vilket är en bra kodkvalitet.</p>
+        <p class="text-block"><b>Code Coverage:</b> Analyserar kodtäckningen. Täckningen blev endast 15% vilket bör förbättras.</p>
+        <p class="text-block"><b>Build Status:</b> Indikerar om byggningen av projektet lyckades eller misslyckades, projektetet lyckades.<p>
+
+        <p class="text-block"><b>App\controller\Biblotekcontroller:</b> Oanvänd kod hittades i BiblotekController.
+         <p class="text-block"><b>Förbättringspotential:</b> Detta kan lösas genom att hitta den oanvända koden och ta bort den.
+        Detta kommer att förbättra läsbarheten och minska komplexitet.</p>
+
+        <p class="text-block"><b>App\Game\Player:</b> Totalt två fel hittades i koden, "Bug" och "Best Practice". 
+         <p class="text-block"><b>Förbättringspotential:</b> Åtgärda buggarna utförs genom förbättra koden med nya funktioner och ny kod.
+        För att felen inte ska uppstå kan koden utökas med enhetstester för att skerställa att koden fungerar korrekt.</p>
+
+        <p class="text-block"><b>App\Game\Deck:</b> Klassen Deck har oanvänd kod. 
+         <p class="text-block"><b>Förbättringspotential:</b> Att rensa bort oanvänd kod för att utöka kodens underhållbarhet och struktur.</p>
+
+    <h3>Koppling till 6C</h3>
+    <p class="text-block"> Våra "findings" från Phpmetrics och Scrutinizer kan användas av de sex C:na (6C) för att analysera kodkvalitet och förbättra koden.</p>
+
+    <p class="text-block"><b>Codestyle</b> <ul class="text-block">
+    <li>Använd mätvärden för åtgärda buggar, välkategoriserade kommentarer,  namngivning och strukturering </li>
+</ul>
+<p>
+    <p class="text-block"><b>Complexity</b> <ul class="text-block">
+    <li>Minska komplexitet genom att bryta ner större klasser och metoder till mindre.</li>
+    <li>Se över mätvärden för att hitta kod med hög komplexitet</li>
+
+</ul>
+<p>
+    <p class="text-block"><b>Coverage</b> <ul class="text-block">
+    <li>Öka kodtäckningen med hjälp av fler enhetstester.</li>
+    <li>Säkerställ att testerna täcker stor delar av koden och minskar risken för problem.</li>
+</ul>
+<p>
+    <p class="text-block"><b>Cohesion</b> <ul class="text-block">
+    <li>Mätvärden visar hur hög eller låg sammanhängande klasser och metoder är på sin funktionalitet.</li>
+</ul>
+<p>
+    <p class="text-block"><b>Coupling</b> <ul class="text-block">
+    <li>Ett mått på hur beroende klasser och moduler är av varandra och om risk finns att behöva göra ändringar i en annan modul eller komponent.</li>
+</ul>
+<p>
+    <p class="text-block"><b>CRAP</b> <ul class="text-block">
+    <li>CRAP Score bör ha ett lägre mätvärde för att minimera risken för buggar och problem vid ändringar. </li>
+</ul>
+    <p class="text-block">Med hjälp av mätvärdena och se över de sex C:na underlättas analysen av kodkvalitet och indentifiera problem med förbättringspotential<p>
+
+
+
+
+    <h2>Förbättringar</h2>
+        <p class="text-block">Med hjälp av mätvärdena som har hittat flaskhalsar och svaga punkter i min kod, ska nu koden förbättras genom en ökad kodtäckning, minskad komplexitet, ta bort oanvänd kod och få en allmänt bättre kodkvalitet.
+        Jag kommer att förbättra de tre exempel vi använde oss av i början av analysen "App\Game\Player", "App\Controller\BiblotekController" och "App\Game\BlackJackGame".
+        Dessa koder blev utvalda därför att förberdelsen finns redan och jag vet vad de har för förbättringspotential. Efter förbättringen är gjord kommer mätvärderna vara bättre, med metoder som uppdelade i mindre delar, utöka enhetstester och ta bort oanvänd kod om det finns.
+         Målet är att lyckas deras cirklar att bli gröna.</p>
+
+
+
+
+{% endblock %}

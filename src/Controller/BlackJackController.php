@@ -50,7 +50,7 @@ class BlackJackController extends AbstractController
             $session->set('game', $game);
         }
 
-        if ($game->getPlayer()->canHit() && !$game->getGameOver()) {
+        if ($game->getPlayer()->canHit() && !$game->isGameOver()) {
             $game->playerHits();
             $session->set('game', $game);
         }
@@ -71,7 +71,7 @@ class BlackJackController extends AbstractController
             $session->set('game', $game);
         }
 
-        if (!$game->getGameOver()) {
+        if (!$game->isGameOver()) {
             $game->playerStands();
             $session->set('game', $game);
         }

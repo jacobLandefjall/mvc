@@ -18,7 +18,7 @@ class Player
     }
 
     /**
-     * @return bool
+     * @return void
      */
     public function stand()
     {
@@ -49,7 +49,7 @@ class Player
     }
 
     /**
-     * @return bool
+     * @return card[]
      */
     public function getCards()
     {
@@ -66,18 +66,20 @@ class Player
     }
 
     /**
+     * Uppdaterat namn för att bättre beskriva vad metoden gör memd phpmetrics.
      *  Metod för att ta kort
      * @param Card $card
      * @return void
      */
-    public function getCard($card)
+    public function receiveCard(Card $card)
     {
 
         $this->hand->addCard($card);
+        $tihs->checkIfLost();
     }
 
     /**
-     * @return bool
+     * @return Hand
      */
     public function getHand()
     {
@@ -124,4 +126,16 @@ class Player
         // Detta är ett exempel och kan behöva anpassas baserat på hur du hanterar poäng eller andra villkor för förlust.
         return $this->getScore() > 21;
     }
+
+    /**
+     * Kontrollerar om poängen är över 21 och sätter lost till true.
+     * @return void
+     */
+    public function checkIfLost()
+    {
+        if ($this->getScore() > 21) {
+            $this->lost = true;
+        }
+    }
+
 }

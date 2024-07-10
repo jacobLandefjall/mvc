@@ -3,11 +3,17 @@
 ![Profilbild](profilbild_fb.jpg)
 
 
+<<<<<<< HEAD
 
 
 Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och hur vi kan klona kurs repot.
 
 
+=======
+
+Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och hur vi kan klona kurs repot.
+
+>>>>>>> fe6c71b (finns några sammanslagningskonflikter)
 Scrutinizer Badgets
 
 [![kodkvalitet](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)

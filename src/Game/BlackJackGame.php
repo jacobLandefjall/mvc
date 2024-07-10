@@ -22,18 +22,27 @@ class BlackJackGame
         $this->player = new Player($this->deck);
         $this->dealer = new Player($this->deck);
 
-        // Ger spelare två kort i början
-        $this->player->hit();
-        $this->player->hit();
-        $this->dealer->hit();
-        $this->dealer->hit();
+        $this->dealCards();
+    }
+
+    /**
+     * Uppdaterad efter phpmetrics.
+     * Ger spelare och dealer två kort i början.
+     * @return void
+     */
+    public function dealCards(): void
+    {
+        for ($i = 0; $i < 2; $i++) {
+            $this->player->hit();
+            $this->dealer->hit();
+        }
     }
 
     /**
      * Metod för att hämta spelaren
      * @return Player
      */
-    public function getPlayer()
+    public function getPlayer(): Player
     {
         return $this->player;
     }
@@ -42,7 +51,7 @@ class BlackJackGame
      * Metod för att hämta dealern
      * @return Player
      */
-    public function getDealer()
+    public function getDealer(): Player
     {
         return $this->dealer;
     }
@@ -51,14 +60,24 @@ class BlackJackGame
      * Metod för "hit" och om poäng överskrider 21
      * @return void
      */
-    public function playerHits()
+    public function playerHits(): void
     {
         if (!$this->gameOver && $this->player->canHit()) {
             $this->player->hit();
-            if ($this->player->getScore() > 21) {
-                $this->gameOver = true;
-                $this->message = "Player busts! Dealer wins.";
-            }
+            $this->checkPlayerBust();
+        }
+    }
+
+    /**
+     * Kontrollerar om spelaren har "bust".
+     * Uppdaterad för phpmetrics.
+     * @return void
+     */
+    public function checkPlayerBust(): void
+    {
+        if ($this->player->getScore() > 21) {
+            $this->gameOver = true;
+            $this->message = "Player busts! Dealer wins.";
         }
     }
 
@@ -66,15 +85,11 @@ class BlackJackGame
      * Metod för att spelaren står
      * @return void
      */
-    public function playerStands()
+    public function playerStands(): void
     {
         $this->gameOver = true;
         $this->dealerTurn();
-        if ($this->dealer->getScore() > 21) {
-            $this->message = "Dealer busts! Player wins.";
-        } else {
-            $this->message = $this->determineWinner();
-        }
+        $this->gameResult();
     }
 
     /**
@@ -89,13 +104,29 @@ class BlackJackGame
     }
 
     /**
+     * Metod för att se resultatet av spelet.
+     * Uppdaterad för phpmetrics.
+     * Bryter ut större metoder till mindre.
+     * @return void
+     */
+    public function gameResult(): void
+    {
+        if($this->dealer->getScore() > 21) {
+            $this->message = "Dealer busts! Player wins.";
+        } else {
+            $this->message = $this->determineWinner();
+        }
+    }
+
+    /**
      * Metod för att bestämma vinnaren
      * @return string
      */
-    public function determineWinner()
+    public function determineWinner(): string
     {
         $playerScore = $this->player->getScore();
         $dealerScore = $this->dealer->getScore();
+
         if ($playerScore > $dealerScore) {
             return "Player wins with $playerScore against dealer's $dealerScore!";
         } elseif ($playerScore < $dealerScore) {
@@ -109,7 +140,7 @@ class BlackJackGame
      * Metod om spelet är över
      * @return bool
      */
-    public function getGameOver()
+    public function isGameOver(): bool
     {
         return $this->gameOver;
     }
@@ -118,7 +149,7 @@ class BlackJackGame
      * Metod för att hämta meddelande
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -127,7 +158,7 @@ class BlackJackGame
      * Metod för att kolla om spelaren kan "hit"
      * @return bool
      */
-    public function canHit()
+    public function canHit(): bool
     {
         return $this->player->canHit();
     }
@@ -136,7 +167,7 @@ class BlackJackGame
      * Metod för om spelaren ger upp
      * @return void
      */
-    public function playerSurrenders()
+    public function playerSurrenders(): void
     {
         $this->gameOver = true;
         $this->message = "Player surrenders! Dealer wins.";

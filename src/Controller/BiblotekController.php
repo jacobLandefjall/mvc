@@ -6,10 +6,8 @@ namespace App\Controller;
 
 use App\Bibliotek\CreateBook;
 use App\Entity\Book;
-use App\Repository\ProductRepository;
 use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -113,7 +111,7 @@ class BiblotekController extends AbstractController
         ]);
     }
 
-    #[Route('/product/delete/{id}', name: 'library_delete', methods:['GET','POST'])]
+    #[Route('/library/delete/{id}', name: 'library_delete', methods:['GET','POST'])]
     public function deleteBookId(int $id): Response
     {
         $book = $this->bookRepository->find($id);
