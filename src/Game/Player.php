@@ -20,7 +20,7 @@ class Player
     /**
      * @return void
      */
-    public function stand()
+    public function stand(): void
     {
         $this->stand = true;
     }
@@ -28,7 +28,7 @@ class Player
     /**
      * @return bool
      */
-    public function isStanding()
+    public function isStanding(): bool
     {
         return $this->stand;
     }
@@ -37,7 +37,7 @@ class Player
      * Metod "hit"
      * @return void
      */
-    public function hit()
+    public function hit(): void
     {
         if ($this->hitCount < 4 && $this->getScore() < 21) {
             $this->hand->addCard($this->deck->drawCard());
@@ -51,7 +51,7 @@ class Player
     /**
      * @return card[]
      */
-    public function getCards()
+    public function getCards(): array
     {
         return $this->hand->getCards();
     }
@@ -60,7 +60,7 @@ class Player
      * @return bool
      * Hit för att kunna "hit"
      */
-    public function canHit()
+    public function canHit(): bool
     {
         return $this->getScore() < 21;
     }
@@ -71,7 +71,7 @@ class Player
      * @param Card $card
      * @return void
      */
-    public function receiveCard(Card $card)
+    public function receiveCard(Card $card): void
     {
 
         $this->hand->addCard($card);
@@ -81,7 +81,7 @@ class Player
     /**
      * @return Hand
      */
-    public function getHand()
+    public function getHand(): Hand
     {
         return $this->hand;
     }
@@ -90,7 +90,7 @@ class Player
      * Metod för att räkna ut handens värde
      * @return int
      */
-    public function getScore()
+    public function getScore(): int
     {
         return $this->hand->getHandValue();
     }
@@ -99,7 +99,7 @@ class Player
      * @return bool
      * Ser om handen har blackjack
      */
-    public function hasBlackjack()
+    public function hasBlackjack(): bool
     {
         return $this->hand->hasBlackjack();
     }
@@ -120,7 +120,7 @@ class Player
      * Kontrollerar om spelaren har förlorat.
      * @return bool
      */
-    public function lost()
+    public function lost(): bool
     {
         // Implementera logiken för att avgöra om spelaren har förlorat.
         // Detta är ett exempel och kan behöva anpassas baserat på hur du hanterar poäng eller andra villkor för förlust.
@@ -131,7 +131,7 @@ class Player
      * Kontrollerar om poängen är över 21 och sätter lost till true.
      * @return void
      */
-    public function checkIfLost()
+    public function checkIfLost(): void
     {
         if ($this->getScore() > 21) {
             $this->lost = true;
