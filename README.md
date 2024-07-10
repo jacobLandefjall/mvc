@@ -10,7 +10,7 @@ Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och 
 
 Scrutinizer Badgets
 
-[![kodkvalitet](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+[![kodkvalitet][(https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main)
 [![Kodtäckning](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
 [![byggstatus](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
 
