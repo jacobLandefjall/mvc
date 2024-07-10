@@ -3,7 +3,7 @@
 ![Profilbild](profilbild_fb.jpg)
 
 
->>>>>>> 1209fec976a131be565444cd58d5129951caf393
+
 
 Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och hur vi kan klona kurs repot.
 
