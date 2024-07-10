@@ -1,14 +1,16 @@
 # Välkommen till MVC kursen
 
 ![Profilbild](profilbild_fb.jpg)
-[![kodkvalitet](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
-[![Kodtäckning](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
-[![byggstatus](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+
 =======
 
 >>>>>>> 1209fec976a131be565444cd58d5129951caf393
 
 Hej och välkommen till MVC kursen,där vi ska komma igång med webbplatsen och hur vi kan klona kurs repot.
+Scrutinizer Badgets
+[![kodkvalitet](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+[![Kodtäckning](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
+[![byggstatus](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/jacobLandefjall/mvc/?branch=main)
 
 # Komma igång
 
