@@ -4,6 +4,9 @@ namespace App\Dice;
 
 class Dice
 {
+    /**
+     * @var int $value The value of the dice.
+     */
     protected $value;
 
     public function __construct()

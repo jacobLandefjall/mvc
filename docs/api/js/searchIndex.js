@@ -138,38 +138,68 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003Alibrary\u0028\u0029",
             "name": "library",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020visa\u0020biblioteket.",
             "url": "classes/App-Controller-BiblotekController.html#method_library"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AcreateBook\u0028\u0029",
             "name": "createBook",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020skapa\u0020en\u0020ny\u0020bok.",
             "url": "classes/App-Controller-BiblotekController.html#method_createBook"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AshowBookId\u0028\u0029",
             "name": "showBookId",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020visa\u0020en\u0020bok\u0020med\u0020ett\u0020specifikt\u0020id.",
             "url": "classes/App-Controller-BiblotekController.html#method_showBookId"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AshowAllBooks\u0028\u0029",
             "name": "showAllBooks",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020visa\u0020alla\u0020b\u00F6cker.",
             "url": "classes/App-Controller-BiblotekController.html#method_showAllBooks"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AupdateBook\u0028\u0029",
             "name": "updateBook",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020uppdatera\u0020en\u0020bok\u0020med\u0020ett\u0020specifikt\u0020id.",
             "url": "classes/App-Controller-BiblotekController.html#method_updateBook"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AdeleteBookId\u0028\u0029",
             "name": "deleteBookId",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020ta\u0020bort\u0020en\u0020bok\u0020med\u0020ett\u0020specifikt\u0020id.",
             "url": "classes/App-Controller-BiblotekController.html#method_deleteBookId"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AresetLibrary\u0028\u0029",
             "name": "resetLibrary",
-            "summary": "",
+            "summary": "Route\u0020f\u00F6r\u0020att\u0020\u00E5terst\u00E4lla\u0020biblioteket.",
             "url": "classes/App-Controller-BiblotekController.html#method_resetLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003ArenderLibraryIndex\u0028\u0029",
+            "name": "renderLibraryIndex",
+            "summary": "Skapade\u0020funktioner\u0020f\u00F6r\u0020att\u0020bryta\u0020ut\u0020kod\u0020och\u0020g\u00F6ra\u0020den\u0020mer\u0020l\u00E4sbar.",
+            "url": "classes/App-Controller-BiblotekController.html#method_renderLibraryIndex"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003ArenderForm\u0028\u0029",
+            "name": "renderForm",
+            "summary": "",
+            "url": "classes/App-Controller-BiblotekController.html#method_renderForm"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AsaveBook\u0028\u0029",
+            "name": "saveBook",
+            "summary": "",
+            "url": "classes/App-Controller-BiblotekController.html#method_saveBook"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AfindBookById\u0028\u0029",
+            "name": "findBookById",
+            "summary": "",
+            "url": "classes/App-Controller-BiblotekController.html#method_findBookById"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AremoveBook\u0028\u0029",
+            "name": "removeBook",
+            "summary": "",
+            "url": "classes/App-Controller-BiblotekController.html#method_removeBook"
+        },                {
+            "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003AresetBooks\u0028\u0029",
+            "name": "resetBooks",
+            "summary": "",
+            "url": "classes/App-Controller-BiblotekController.html#method_resetBooks"
         },                {
             "fqsen": "\\App\\Controller\\BiblotekController\u003A\u003A\u0024entityManager",
             "name": "entityManager",
@@ -411,6 +441,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LuckyControllerTwig.html#property_bookRepository"
         },                {
+            "fqsen": "\\App\\Controller\\MetricController",
+            "name": "MetricController",
+            "summary": "",
+            "url": "classes/App-Controller-MetricController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricController\u003A\u003Aanalys\u0028\u0029",
+            "name": "analys",
+            "summary": "",
+            "url": "classes/App-Controller-MetricController.html#method_analys"
+        },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
             "summary": "",
@@ -518,27 +558,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "L\u00E4gg\u0020till\u0020en\u0020t\u00E4rning",
             "url": "classes/App-Dice-DiceHand.html#method_add"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
-            "summary": "",
+            "summary": "Rulla\u0020alla\u0020t\u00E4rningar",
             "url": "classes/App-Dice-DiceHand.html#method_roll"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetNumberDices\u0028\u0029",
             "name": "getNumberDices",
-            "summary": "",
+            "summary": "Ber\u00E4kna\u0020summan\u0020av\u0020alla\u0020t\u00E4rningsv\u00E4rden",
             "url": "classes/App-Dice-DiceHand.html#method_getNumberDices"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetValues\u0028\u0029",
             "name": "getValues",
-            "summary": "",
+            "summary": "F\u00E5\u0020v\u00E4rdet\u0020som\u0020en\u0020int",
             "url": "classes/App-Dice-DiceHand.html#method_getValues"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "F\u00E5\u0020v\u00E4rdet\u0020som\u0020en\u0020str\u00E4ng",
             "url": "classes/App-Dice-DiceHand.html#method_getString"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003A\u0024hand",
@@ -556,19 +596,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Book.html#method_getId"
         },                {
-            "fqsen": "\\App\\Entity\\Book\u003A\u003AgetBooks\u0028\u0029",
-            "name": "getBooks",
-            "summary": "",
-            "url": "classes/App-Entity-Book.html#method_getBooks"
-        },                {
-            "fqsen": "\\App\\Entity\\Book\u003A\u003AsetBooks\u0028\u0029",
-            "name": "setBooks",
-            "summary": "",
-            "url": "classes/App-Entity-Book.html#method_setBooks"
-        },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetAuthor\u0028\u0029",
             "name": "getAuthor",
-            "summary": "",
+            "summary": "public\u0020function\u0020getBooks\u0028\u0029\u003A\u0020\u003Fstring\n\u007B\nreturn\u0020\u0024this\u002D\u003EBooks\u003B\n\u007D",
             "url": "classes/App-Entity-Book.html#method_getAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetAuthor\u0028\u0029",
@@ -686,6 +716,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-BlackJackGame.html#method___construct"
         },                {
+            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AdealInitialCards\u0028\u0029",
+            "name": "dealInitialCards",
+            "summary": "Uppdaterad\u0020efter\u0020phpmetrics.",
+            "url": "classes/App-Game-BlackJackGame.html#method_dealInitialCards"
+        },                {
             "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
             "summary": "Metod\u0020f\u00F6r\u0020att\u0020h\u00E4mta\u0020spelaren",
@@ -701,6 +736,11 @@ Search.appendIndex(
             "summary": "Metod\u0020f\u00F6r\u0020\u0022hit\u0022\u0020och\u0020om\u0020po\u00E4ng\u0020\u00F6verskrider\u002021",
             "url": "classes/App-Game-BlackJackGame.html#method_playerHits"
         },                {
+            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AcheckPlayerBust\u0028\u0029",
+            "name": "checkPlayerBust",
+            "summary": "Kontrollerar\u0020om\u0020spelaren\u0020har\u0020\u0022bust\u0022.",
+            "url": "classes/App-Game-BlackJackGame.html#method_checkPlayerBust"
+        },                {
             "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AplayerStands\u0028\u0029",
             "name": "playerStands",
             "summary": "Metod\u0020f\u00F6r\u0020att\u0020spelaren\u0020st\u00E5r",
@@ -711,15 +751,25 @@ Search.appendIndex(
             "summary": "Metod\u0020f\u00F6r\u0020att\u0020k\u00F6ra\u0020dealerns\u0020tur",
             "url": "classes/App-Game-BlackJackGame.html#method_dealerTurn"
         },                {
+            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AcheckGameResult\u0028\u0029",
+            "name": "checkGameResult",
+            "summary": "Metod\u0020f\u00F6r\u0020att\u0020se\u0020resultatet\u0020av\u0020spelet.",
+            "url": "classes/App-Game-BlackJackGame.html#method_checkGameResult"
+        },                {
             "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AdetermineWinner\u0028\u0029",
             "name": "determineWinner",
-            "summary": "Metod\u0020f\u00F6r\u0020att\u0020best\u00E4mma\u0020vinnaren",
+            "summary": "Metod\u0020f\u00F6r\u0020att\u0020best\u00E4mma\u0020vinnaren.",
             "url": "classes/App-Game-BlackJackGame.html#method_determineWinner"
         },                {
-            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AgetGameOver\u0028\u0029",
-            "name": "getGameOver",
+            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AendGame\u0028\u0029",
+            "name": "endGame",
+            "summary": "Metod\u0020f\u00F6r\u0020att\u0020avsluta\u0020spelet\nprivate\u0020d\u00E4rf\u00F6r\u0020att\u0020funktionen\u0020anv\u00E4nds\u0020i\u0020blackJackGame\u0020klassen.",
+            "url": "classes/App-Game-BlackJackGame.html#method_endGame"
+        },                {
+            "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AisGameOver\u0028\u0029",
+            "name": "isGameOver",
             "summary": "Metod\u0020om\u0020spelet\u0020\u00E4r\u0020\u00F6ver",
-            "url": "classes/App-Game-BlackJackGame.html#method_getGameOver"
+            "url": "classes/App-Game-BlackJackGame.html#method_isGameOver"
         },                {
             "fqsen": "\\App\\Game\\BlackJackGame\u003A\u003AgetMessage\u0028\u0029",
             "name": "getMessage",
@@ -853,7 +903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Deck\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "Metod\u0020f\u00F6r\u0020att\u0020dra\u0020ett\u0020kort.",
             "url": "classes/App-Game-Deck.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Game\\Deck\u003A\u003AgetCards\u0028\u0029",
@@ -931,10 +981,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-Player.html#method_canHit"
         },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AgetCard\u0028\u0029",
-            "name": "getCard",
-            "summary": "Metod\u0020f\u00F6r\u0020att\u0020ta\u0020kort",
-            "url": "classes/App-Game-Player.html#method_getCard"
+            "fqsen": "\\App\\Game\\Player\u003A\u003AreceiveCard\u0028\u0029",
+            "name": "receiveCard",
+            "summary": "Uppdaterat\u0020namn\u0020f\u00F6r\u0020att\u0020b\u00E4ttre\u0020beskriva\u0020vad\u0020metoden\u0020g\u00F6r\u0020memd\u0020phpmetrics.",
+            "url": "classes/App-Game-Player.html#method_receiveCard"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
@@ -960,6 +1010,11 @@ Search.appendIndex(
             "name": "lost",
             "summary": "",
             "url": "classes/App-Game-Player.html#property_lost"
+        },                {
+            "fqsen": "\\App\\Game\\Player\u003A\u003AcheckIfLost\u0028\u0029",
+            "name": "checkIfLost",
+            "summary": "Kontrollerar\u0020om\u0020po\u00E4ngen\u0020\u00E4r\u0020\u00F6ver\u002021\u0020och\u0020s\u00E4tter\u0020lost\u0020till\u0020true.",
+            "url": "classes/App-Game-Player.html#method_checkIfLost"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003A\u0024hand",
             "name": "hand",

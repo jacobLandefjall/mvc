@@ -11,7 +11,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class CreateBook extends AbstractType
 {
-
     /**
      * Skapar ett formulär för att skapa en ny bok.
      * @param FormBuilderInterface $builder bygger formuläret.

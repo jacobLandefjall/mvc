@@ -19,7 +19,7 @@ class HandTest extends TestCase
     public function testAddCard(): void
     {
         $hand = new Hand();
-        $card = $this->createMock(Card::class, ['suit' => 'Hearts', 'value' => '10']);
+        $card = $this->createMock(Card::class);
         $card->method('getValue')->willReturn('10'); // getValue() returnerar 10.
 
         $hand->addCard($card);

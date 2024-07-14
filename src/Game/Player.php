@@ -2,15 +2,38 @@
 
 namespace App\Game;
 
+use App\Game\Card;
+
 class Player
 {
+    /**
+     * @var Hand
+     */
     private $hand;
+
+    /**
+     * @var bool
+     */
     private $stand = false;
-    private bool $lost = false;
+
+    /**
+     * @var bool
+     */
+    private $lost = false;
+
+    /**
+     * @var Deck
+     */
     private $deck;
+
+    /**
+     * @var int
+     */
     private $hitCount = 0;
 
-    // Konstruktor
+    /**
+     * @param Deck $deck
+     */
     public function __construct(Deck $deck)
     {
         $this->hand = new Hand();
@@ -75,7 +98,7 @@ class Player
     {
 
         $this->hand->addCard($card);
-        $tihs->checkIfLost();
+        $this->checkIfLost();
     }
 
     /**
@@ -108,12 +131,14 @@ class Player
      * @return bool
      * Checkar om poäng är över 21 och sätter lost till true
      */
-    public function addCard(Card $card)
+    public function addCard(Card $card): bool
     {
         $this->hand->addCard($card);
         if ($this->getScore() > 21) {
             $this->lost = true;
+            return false;
         }
+        return true;
     }
 
     /**

@@ -30,6 +30,9 @@ class DeckTest extends TestCase
         $this->assertNotEquals($notShuffled, $shuffled); // Kontrollerar att kortleken är blandad.
     }
 
+    /**
+     * Test för att dra ett kort.
+     */
     public function testDrawCard(): void
     {
         $deck = new Deck();

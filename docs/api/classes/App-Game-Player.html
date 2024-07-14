@@ -142,7 +142,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">7</span>
 
     </aside>
 
@@ -177,19 +177,19 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-Player.html#property_deck">$deck</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/App-Game-Deck.html"><abbr title="\App\Game\Deck">Deck</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-Player.html#property_hand">$hand</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/App-Game-Hand.html"><abbr title="\App\Game\Hand">Hand</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-Player.html#property_hitCount">$hitCount</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: int            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -201,7 +201,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-Player.html#property_stand">$stand</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: bool            </span>
 </dt>
 
     </dl>
@@ -231,22 +231,22 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Player.html#method_getCard">getCard()</a>
+    <a href="classes/App-Game-Player.html#method_checkIfLost">checkIfLost()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Metod för att ta kort</dd>
+<dd>Kontrollerar om poängen är över 21 och sätter lost till true.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Player.html#method_getCards">getCards()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: array&lt;string|int, <abbr title="\App\Game\card">card</abbr>&gt;    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Player.html#method_getHand">getHand()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: <a href="classes/App-Game-Hand.html"><abbr title="\App\Game\Hand">Hand</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -283,9 +283,16 @@
 <dd>Kontrollerar om spelaren har förlorat.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Game-Player.html#method_receiveCard">receiveCard()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Uppdaterat namn för att bättre beskriva vad metoden gör memd phpmetrics.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Player.html#method_stand">stand()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: void    </span>
 </dt>
 
     </dl>
@@ -318,14 +325,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game-Deck.html"><abbr title="\App\Game\Deck">Deck</abbr></a></span>
     <span class="phpdocumentor-signature__name">$deck</span>
     </code>
 
@@ -353,14 +360,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game-Hand.html"><abbr title="\App\Game\Hand">Hand</abbr></a></span>
     <span class="phpdocumentor-signature__name">$hand</span>
     </code>
 
@@ -388,14 +395,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$hitCount</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
@@ -423,7 +430,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -458,14 +465,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$stand</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
@@ -498,7 +505,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -541,7 +548,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -592,7 +599,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -625,38 +632,28 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCard">
-        getCard()
-        <a href="classes/App-Game-Player.html#method_getCard" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_checkIfLost">
+        checkIfLost()
+        <a href="classes/App-Game-Player.html#method_checkIfLost" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Metod för att ta kort</p>
+        <p class="phpdocumentor-summary">Kontrollerar om poängen är över 21 och sätter lost till true.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-Card.html"><abbr title="\App\Game\Card">Card</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">checkIfLost</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$card</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-Card.html"><abbr title="\App\Game\Card">Card</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
+    
     
 
     
@@ -677,14 +674,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">getCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\App\Game\card">card</abbr>&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -696,7 +693,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\App\Game\card">card</abbr>&gt;</span>
             </section>
 
 </article>
@@ -714,14 +711,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getHand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">getHand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Game-Hand.html"><abbr title="\App\Game\Hand">Hand</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -733,7 +730,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Game-Hand.html"><abbr title="\App\Game\Hand">Hand</abbr></a></span>
             </section>
 
 </article>
@@ -751,7 +748,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -789,7 +786,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
@@ -830,7 +827,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -864,7 +861,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -901,7 +898,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -931,6 +928,52 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_receiveCard">
+        receiveCard()
+        <a href="classes/App-Game-Player.html#method_receiveCard" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">97</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Uppdaterat namn för att bättre beskriva vad metoden gör memd phpmetrics.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">receiveCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-Card.html"><abbr title="\App\Game\Card">Card</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+        <section class="phpdocumentor-description"><p>Metod för att ta kort</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-Card.html"><abbr title="\App\Game\Card">Card</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_stand">
         stand()
         <a href="classes/App-Game-Player.html#method_stand" class="headerlink"><i class="fas fa-link"></i></a>
@@ -939,14 +982,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">stand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">stand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -956,11 +999,7 @@
 
     
 
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
+    
 </article>
             </section>
 
@@ -1089,7 +1128,7 @@
                                             <li><a href="classes/App-Game-Player.html#method___construct">__construct()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_addCard">addCard()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_canHit">canHit()</a></li>
-                                            <li><a href="classes/App-Game-Player.html#method_getCard">getCard()</a></li>
+                                            <li><a href="classes/App-Game-Player.html#method_checkIfLost">checkIfLost()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_getCards">getCards()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_getHand">getHand()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_getScore">getScore()</a></li>
@@ -1097,6 +1136,7 @@
                                             <li><a href="classes/App-Game-Player.html#method_hit">hit()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_isStanding">isStanding()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_lost">lost()</a></li>
+                                            <li><a href="classes/App-Game-Player.html#method_receiveCard">receiveCard()</a></li>
                                             <li><a href="classes/App-Game-Player.html#method_stand">stand()</a></li>
                                     </ul>
             </li>

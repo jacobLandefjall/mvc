@@ -18,7 +18,7 @@ class ProductRepository extends ServiceEntityRepository
 
     /**
      * Find all producs having a value above the specified one.
-     * float $value The minimum value to search for.
+     * @param float $value The minimum value to search for.
      * @return Product[] Returns an array of Product objects
      */
     public function findByMinimumValue(float $value): array
@@ -35,7 +35,7 @@ class ProductRepository extends ServiceEntityRepository
     /**
      * Find all producs having a value above the specified one with SQL.
      *
-     * @return [][] Returns an array of arrays (i.e. a raw data set)
+     * @return array<array<string,mixed>> Returns an array of arrays (i.e., a raw data set)
      */
     public function findByMinimumValue2(float $value): array
     {

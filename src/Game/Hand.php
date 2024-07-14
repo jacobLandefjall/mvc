@@ -9,6 +9,9 @@ namespace App\Game;
  */
 class Hand
 {
+    /**
+     * @var Card[]
+     */
     private $cards = [];
 
     /**

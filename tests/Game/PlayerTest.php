@@ -45,6 +45,7 @@ class PlayerTest extends TestCase
     public function testHitLimit(): void
     {
         $deck = $this->createMock(Deck::class);
+
         $deck->method('drawCard')
             ->willReturn(new Card('Spader', '10')); // Returnerar kortet spader 10.
         $player = new Player($deck);

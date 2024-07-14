@@ -30,7 +30,7 @@ class Book
     {
         return $this->id;
     }
-
+    /**
     public function getBooks(): ?string
     {
         return $this->Books;
@@ -42,6 +42,7 @@ class Book
 
         return $this;
     }
+    */
 
     public function getAuthor(): ?string
     {

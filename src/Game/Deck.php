@@ -9,6 +9,9 @@ require_once("Card.php"); // inkluderar Card.php
 
 class Deck
 {
+    /**
+     * @var Card[] $cards
+     */
     private $cards = [];
 
     /**
@@ -47,8 +50,11 @@ class Deck
         shuffle($this->cards);
     }
 
-    // Skapar en metod för att dra kort till spelare
-    public function drawCard()
+    /**
+     * Metod för att dra ett kort.
+     * @return Card
+     */
+    public function drawCard(): Card
     {
         return array_shift($this->cards);
     }

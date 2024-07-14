@@ -4,8 +4,19 @@ namespace App\Card;
 
 class Card
 {
+    /**
+     * @var string $suit
+     */
     private $suit;
+
+    /**
+     * @var string $value
+     */
     private $value;
+
+    /**
+     * @var string $color
+     */
     private $color;
 
     private $suits = [

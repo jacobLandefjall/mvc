@@ -4,10 +4,27 @@ namespace App\Game;
 
 class Card
 {
-    private $value; // värde för kortet
-    private $color; // färg för kortet
-    private $suit; // rank för kortet
+    /**
+     * @var string $value
+     * värde för kortet
+     */
+    private $value;
+    /**
+     * @var string $color
+     * färg för kortet
+     */
+    private $color;
 
+    /**
+     * @var string $suit
+     * rank för kortet
+     */
+    private $suit;
+
+    /**
+     * @var array $suits
+     * rank för kortet
+     */
     private $suits = [
         'hearts' => '♥',
         'diamonds' => '♦',
@@ -31,7 +48,7 @@ class Card
      * Sätter färgen på korten
      * @param string $suit
      */
-    private function setColor($suit)
+    private function setColor($suit): string
     {
         if ($suit == 'hearts' || $suit == 'diamonds') {
             return 'red';

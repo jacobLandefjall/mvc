@@ -178,31 +178,31 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-BlackJackGame.html#property_dealer">$dealer</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-BlackJackGame.html#property_deck">$deck</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/App-Game-Deck.html"><abbr title="\App\Game\Deck">Deck</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-BlackJackGame.html#property_gameOver">$gameOver</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: bool            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-BlackJackGame.html#property_message">$message</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Game-BlackJackGame.html#property_player">$player</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a>            </span>
 </dt>
 
     </dl>
@@ -227,6 +227,13 @@
 <dd>Metod för att kolla om spelaren kan &quot;hit&quot;</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Game-BlackJackGame.html#method_checkPlayerBust">checkPlayerBust()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Kontrollerar om spelaren har &quot;bust&quot;.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-BlackJackGame.html#method_dealerTurn">dealerTurn()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -234,11 +241,11 @@
 <dd>Metod för att köra dealerns tur</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-BlackJackGame.html#method_determineWinner">determineWinner()</a>
+    <a href="classes/App-Game-BlackJackGame.html#method_dealInitialCards">dealInitialCards()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>Metod för att bestämma vinnaren</dd>
+<dd>Uppdaterad efter phpmetrics.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-BlackJackGame.html#method_getDealer">getDealer()</a>
@@ -246,13 +253,6 @@
                                 &nbsp;: <a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a>    </span>
 </dt>
 <dd>Metod för att hämta dealern</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-BlackJackGame.html#method_getGameOver">getGameOver()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Metod om spelet är över</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-BlackJackGame.html#method_getMessage">getMessage()</a>
@@ -267,6 +267,13 @@
                                 &nbsp;: <a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a>    </span>
 </dt>
 <dd>Metod för att hämta spelaren</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Game-BlackJackGame.html#method_isGameOver">isGameOver()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Metod om spelet är över</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-BlackJackGame.html#method_playerHits">playerHits()</a>
@@ -288,6 +295,28 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>Metod för om spelaren ger upp</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Game-BlackJackGame.html#method_checkGameResult">checkGameResult()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Metod för att se resultatet av spelet.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Game-BlackJackGame.html#method_determineWinner">determineWinner()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Metod för att bestämma vinnaren.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Game-BlackJackGame.html#method_endGame">endGame()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Metod för att avsluta spelet
+private därför att funktionen används i blackJackGame klassen.</dd>
 
     </dl>
 
@@ -319,14 +348,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a></span>
     <span class="phpdocumentor-signature__name">$dealer</span>
     </code>
 
@@ -354,14 +383,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game-Deck.html"><abbr title="\App\Game\Deck">Deck</abbr></a></span>
     <span class="phpdocumentor-signature__name">$deck</span>
     </code>
 
@@ -389,14 +418,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$gameOver</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
@@ -424,14 +453,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$message</span>
     </code>
 
@@ -459,14 +488,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a></span>
     <span class="phpdocumentor-signature__name">$player</span>
     </code>
 
@@ -499,7 +528,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -532,7 +561,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -562,6 +591,42 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_checkPlayerBust">
+        checkPlayerBust()
+        <a href="classes/App-Game-BlackJackGame.html#method_checkPlayerBust" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">94</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Kontrollerar om spelaren har &quot;bust&quot;.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">checkPlayerBust</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+        <section class="phpdocumentor-description"><p>Uppdaterad för phpmetrics.</p>
+</section>
+
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_dealerTurn">
         dealerTurn()
         <a href="classes/App-Game-BlackJackGame.html#method_dealerTurn" class="headerlink"><i class="fas fa-link"></i></a>
@@ -570,7 +635,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -596,37 +661,35 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_determineWinner">
-        determineWinner()
-        <a href="classes/App-Game-BlackJackGame.html#method_determineWinner" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_dealInitialCards">
+        dealInitialCards()
+        <a href="classes/App-Game-BlackJackGame.html#method_dealInitialCards" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Metod för att bestämma vinnaren</p>
+        <p class="phpdocumentor-summary">Uppdaterad efter phpmetrics.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">determineWinner</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">dealInitialCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
-    
+        <section class="phpdocumentor-description"><p>Ger spelare och dealer två kort i början.</p>
+</section>
+
     
     
 
     
 
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-            </section>
-
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -642,7 +705,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -672,44 +735,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getGameOver">
-        getGameOver()
-        <a href="classes/App-Game-BlackJackGame.html#method_getGameOver" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">112</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Metod om spelet är över</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getGameOver</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getMessage">
         getMessage()
         <a href="classes/App-Game-BlackJackGame.html#method_getMessage" class="headerlink"><i class="fas fa-link"></i></a>
@@ -718,7 +743,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
@@ -756,7 +781,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -786,6 +811,44 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_isGameOver">
+        isGameOver()
+        <a href="classes/App-Game-BlackJackGame.html#method_isGameOver" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">169</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Metod om spelet är över</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isGameOver</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_playerHits">
         playerHits()
         <a href="classes/App-Game-BlackJackGame.html#method_playerHits" class="headerlink"><i class="fas fa-link"></i></a>
@@ -794,7 +857,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -828,7 +891,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -862,7 +925,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
@@ -876,6 +939,128 @@
         </div>
     
     
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_checkGameResult">
+        checkGameResult()
+        <a href="classes/App-Game-BlackJackGame.html#method_checkGameResult" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">129</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Metod för att se resultatet av spelet.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">checkGameResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+        <section class="phpdocumentor-description"><p>Bryter ut större metoder till mindre.
+private därför att funktionen används i blackJackGame klassen.@</p>
+</section>
+
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_determineWinner">
+        determineWinner()
+        <a href="classes/App-Game-BlackJackGame.html#method_determineWinner" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Metod för att bestämma vinnaren.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">determineWinner</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+        <section class="phpdocumentor-description"><p>private därför att funktionen används i blackJackGame klassen.</p>
+</section>
+
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_endGame">
+        endGame()
+        <a href="classes/App-Game-BlackJackGame.html#method_endGame" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/BlackJackGame.php"><a href="files/src-game-blackjackgame.html"><abbr title="src/Game/BlackJackGame.php">BlackJackGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">159</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Metod för att avsluta spelet
+private därför att funktionen används i blackJackGame klassen.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">endGame</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$message</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
     
 
     
@@ -1008,15 +1193,19 @@
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/App-Game-BlackJackGame.html#method___construct">__construct()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_canHit">canHit()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_checkPlayerBust">checkPlayerBust()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_dealerTurn">dealerTurn()</a></li>
-                                            <li><a href="classes/App-Game-BlackJackGame.html#method_determineWinner">determineWinner()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_dealInitialCards">dealInitialCards()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_getDealer">getDealer()</a></li>
-                                            <li><a href="classes/App-Game-BlackJackGame.html#method_getGameOver">getGameOver()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_getMessage">getMessage()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_getPlayer">getPlayer()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_isGameOver">isGameOver()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_playerHits">playerHits()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_playerStands">playerStands()</a></li>
                                             <li><a href="classes/App-Game-BlackJackGame.html#method_playerSurrenders">playerSurrenders()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_checkGameResult">checkGameResult()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_determineWinner">determineWinner()</a></li>
+                                            <li><a href="classes/App-Game-BlackJackGame.html#method_endGame">endGame()</a></li>
                                     </ul>
             </li>
                     </ul>
