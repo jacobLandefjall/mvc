@@ -1,0 +1,234 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Projekt: Hållbar utveckling{% endblock %}
+
+{% block body %}
+    <h1>Presentation</h1>
+<p>Kmom10: Projektet</p>
+
+<h2>Introduktion</h2>
+<p>Hållbar utveckling är ett begrepp som används kontinuerligt och används vid mål av samhällsutveckling. “Vår gemensamma framtid” anses vara definitionen av begreppet. 
+En hållbar utveckling bygger på miljön, ekonomin och det sociala. För en hållbar utveckling behöver världens länder uppnå globala mål. Främja fred och rättvisa. Lösa klimatkrisen.
+ Avskaffa fattigdom. Minska ojämlikheter och orättvisor i världen. För en hållbar utveckling kräver vi globala mål för vår jord.</p>
+
+<p>Detta projekt fokuserar på hur vi kan främja hållbar och modern energi för alla. Stora delar av världens befolkning
+    saknar fortfarande tillgång till el, medan efterfrågan på energi ökar. Alla åldrar ska ha hälsosamma liv och främja välbefinnande.
+    För en utveckling för samhället krävs god hälsa hos människor i alla åldrar. Säkerställa hållbara konsumtioner och produtkioner.
+    Då vi har ett överflöd av naturresurser, har vi människor inte använt eller tagit ansvar för våra resurser särkilt bra.
+    För en hållbar utveckling kräver vi förbättring hur vi producerar och konsumerar varor och resurser.</p>
+
+
+<h3>Hållbar Energi</h3>
+<h4>Handeslpris på el för hushåll</h4>
+<p>Handelspris på el för hushåll, öre/kWh efter förbrukarkategori (årlig elkonsumtion kWh)</p>
+<table>
+    <thead>
+        <tr>
+            <th>Period</th>
+            <th>Mindre än 1000 kwh</th>
+            <th>1000 - 2499 kwh</th>
+            <th>2500 - 4999 kwh</th>
+            <th>5000 - 14999 kwh</th>
+            <th>15000 kwh eller mer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for period, values in showEnergi %}
+            <tr>
+                <td>{{ period }}</td>
+                {% for value in values %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__EN__EN0301__EN0301A/SSDHalvarElHus/table/tableViewLayout1/" class="Button">Statistik för elkonsumtion</a>
+<p>Tabellen visar historiska handelspriser på el för hushåll, uppdelat på olika förbrukarkategorier och perioder.
+Denna information kan användas för att analysera trender på elmarknaden.
+Prisökningen för el kan motivera hushåll att investera i förnybar energi, vilket kan minska miljöskadliga och dyra energikällor.</p>
+
+<h4>Förnybar energi i Sverige</h4>
+<p>Andel av den totala slutliga energianvändningen i procent</p>
+<table>
+    <thead>
+        <tr>
+            <th>År</th>
+            <th>Värme, kyla, industri m.m </th>
+            <th>El</th>
+            <th>Transporter</th>
+            <th>Totalt</th>
+        </tr>
+    </thead>
+<tbody>
+        {% for year, values in hallbarEnergi %}
+             <tr>
+                <td>{{ year }}</td>
+                {% for value in values %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="https://www.scb.se/hitta-statistik/temaomraden/agenda-2030/mal-7/" class="Button">Statistik för bränseförbrukning</a>
+<p>Tabellen visar andelen förnybar energi i Sverige från 2014 till 2021. Andelen har ökat från 51% till 64%,
+vilket indikerar en positiv trend mot användning av mer hållbara energikällor.
+Genom att öka andelen förnybar energi kan vi minska vårt beroende av fossila bränslen och främja en effektiv energi.<p> 
+
+<h3>God hälsa och välbefinnande</h3>
+<p>Att säkerställa hälsosamma liv och främja välbefinnande för alla åldrar är grundläggande för hållbar utveckling.
+Hälsosamma befolkningar bidrar till social och ekonomisk utveckling.
+Tilgångar och förebyggande åtgärder till modern vård kommer vara avgörade för en förbättrad folkhälsa.</p>
+
+<h4>Mödradödlighet</h4>
+<p>Minska mödradödligheten till mindre än 70 dödsfall per 100 000 förlossningar till år 2030<p>
+<table>
+    <thead>
+        <tr>
+            <th>År</th>
+            <th>Mödradödlighet per 100 000 levande födda</th>
+        </tr>
+    </thead>
+<tbody>
+        {% for year, values in goalOne %}
+             <tr>
+                <td>{{ year }}</td>
+                {% for value in values %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href=https://www.scb.se/hitta-statistik/temaomraden/agenda-2030/mal-3/" class="Button">Statistik över mödradödlighet</a>
+<p>Tabellen visar mödradödligheten i Sverige per 100 000 levande födda mellan 20012 och 2022.
+En minskad mödradödlighet är viktigt för att kunna nå en förbättrad mödravård och insatser.
+Minskningen bidrar till ökad chans till överlevnad för både mödrar och nyfödda.</p>
+
+<h4>Rökning</h4>
+<p>Antal personer som röker dagligen</p>
+<table>
+    <thead>
+        <tr>
+            <th>År</th>
+            <th>Kvinnor 16-29 år</th>
+            <th>Kvinnor 30-44 år</th>
+            <th>Kvinnor 45-64 år</th>
+            <th>Kvinnor 65-84 år</th>
+            <th>Män 16-29 år</th>
+            <th>Män 30-44 år</th>
+            <th>Män 45-64 år</th>
+            <th>Män 65-84 år</th>
+        </tr>
+    </thead>
+<tbody>
+        {% for year, values in goalTwo %}
+        <tr>
+            <td>{{ year}}</td>
+            <td>{{ values['Kvinnor'][0]}}</td>
+            <td>{{ values['Kvinnor'][1]}}</td>
+            <td>{{ values['Kvinnor'][2]}}</td>
+            <td>{{ values['Kvinnor'][3]}}</td>
+            <td>{{ values['Män'][0] }}</td>
+            <td>{{ values['Män'][1] }}</td>
+            <td>{{ values['Män'][2] }}</td>
+            <td>{{ values['Män'][3] }}</td>
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+
+<a href="https://www.scb.se/hitta-statistik/temaomraden/agenda-2030/mal-3/" class="Button">Statistik över god hälsa och välbefinnande</a>
+<p>Tabellen inehåller andeln personer som röker dagligen i Sverige från 2010 till 2022.
+Den visar en tydlig minskning, särklit bland yngre och medelålders vuxna, både hos kvinnor och män.
+Minskad rökning förbättrar folkhälsan och visar på att insatser kring tobaken har varit effektiva.</p>
+
+<h3>Hållbar konsumtion och produktion</h3>
+<p>För att uppnå hållbar utveckling är det nödvändigt att förändra hur vi producerar och konsumerar.
+Genom att minska avfall, förbättrad återvinning och använda resurser effektivt.
+En hållbar konsumtion och produktion bidrar till miljöfördelar, social välvärd och ekonomisk tillväxt.</p>
+
+<h4>Livsmedelsavfall</h4>
+<p>Livsmedelsavfall i Sverige per capita (kilogram) per år</p>
+<table>
+    <thead>
+        <tr>
+            <th>År</th>
+            <th>Hushåll</th>
+            <th>Hushåll inklusive mat och dryck i avlopp</th>
+            <th>Offentlig måltid</th>
+            <th>Restauranger</th>
+            <th>Livsmedelsbutiker</th>
+            <th>Grossister</th>
+            <th>Livmedelsindustri</th>
+            <th>Primärproduktion</th>
+        </tr>
+    </thead>
+<tbody>
+        {% for year, values in produktionGoal %}
+        <tr>
+            <td>{{ year}}</td>
+            <td>{{ values['Hushåll']}}</td>
+            <td>{{ values['Hushåll inkl. mat och dryck i avlopp']}}</td>
+            <td>{{ values['Offentlig måltid']}}</td>
+            <td>{{ values['Restauranger']}}</td>
+            <td>{{ values['Livsmedelsbutiker'] }}</td>
+            <td>{{ values['Grossister'] }}</td>
+            <td>{{ values['Livsmedelsindustri'] }}</td>
+            <td>{{ values['Primärproduktion'] }}</td>
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+
+<a href="https://www.naturvardsverket.se/data-och-statistik/avfall/avfall-mat/" class="Button">Statistik över Livsmedelsavfall i Sverige</a>
+<p>Tabellen visar mängen Livsmedelsavfall per capita i Sverige från 2012 till 2020.
+Genom att minska Livsmedelsavfallet kan vi bidra till en mer hållbar konsumtion och produktion,
+vilket kommer minska miljöpåverkan och besvara våra resurser.</p>
+
+<h4>Växthusgasutsläpp</h4>
+<p>Växthusgasutsläpp i Sverige och i andra länder (miljoner ton CO2)</p>
+<table>
+    <thead>
+        <tr>
+            <th>År</th>
+            <th>Totala utsläpp</th>
+            <th>Utsläpp i andra länder</th>
+            <th>Utsläpp i Sverige</th>
+        </tr>
+    </thead>
+<tbody>
+        {% for year, values in greenHouse %}
+        <tr>
+            <td>{{ year}}</td>
+            <td>{{ values['Totala utsläpp']}}</td>
+            <td>{{ values['Utsläpp i andra länder']}}</td>
+            <td>{{ values['Utsläpp i Sverige']}}</td>
+
+            </tr>
+        {% endfor %}
+</tbody>
+</table>
+
+<a href="https://www.sverigesmiljomal.se/miljomalen/begransad-klimatpaverkan/konsumtionsbaserade-utslapp-i-sverige-och-i-andra-lander/" class="Button">Statistik över utsläppen av växthusgas</a>
+<p>Tabellen över växthusutsläpp från 2008 till 2021 visar variationer i både totala utsläpp i andra länder och utsläpp i Sverige.
+Totala usläpp har en minskning över tid, vilket leder till framgångsrika åtgärder för klimatförändringar.
+En särkild tydlig minskning visas från 2019 till 2020, vilket kan förklaras
+av minskad aktivitet på grund av COVID-19 pandemin. Minskningen av det totala utsläppen är ett bra teceken.
+Sveriges minskade utsläpp visar att landet gör framsteg mot klimatmålen.
+Utsläppen i andra länder behövs minskas och bör övervakas. Även om det totala utsläppen minskar,
+är det viktigt att se till att detta inte bara är en följd att utsläpp flyttas till andra länder.
+För större minskning av utsläppen krävs det samarbete mellan länder för ett minska de globala utsläppen. Dessutom att övevaka utsläpp och rapportera
+dessa för att säkerställa ansvarstagande. En ökad investering i nya teknologier och metoder för att ytterligare minska utsläpp och förbättra 
+hållbarheten i både produktion och konsumtion.
+
+<h4>Sammanfatting</h4>
+
+<p>Resultaten och värderna visar tydligt hur viktigt det är att främja hållbar energi, god hälsa och hållbar konsumtion och produktion.
+Genom att analysera och presentera data kan vi bättre förstå svårigheterna och framstegen. För att vi ska uppnå en hållbar utveckling krävs det fortsatta instser och globalt samarbete.</p>
+
+{% endblock %}

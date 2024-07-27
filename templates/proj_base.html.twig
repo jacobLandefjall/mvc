@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/assets/styles/custom.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('Projekt_about') }}">About</a></li>
+                <li><a href="{{ path('Projekt') }}">Proj</a></li>
+                <li><a href="{{ path('Projekt_show') }}">Diagram</a></li>
+            </ul>
+        </nav>
+        {% block body %}{% endblock %}
+        </body>
+    <div class="link-container">
+          <a href="http://localhost:8888/public/">
+        <img src="{{ asset('build/images/home.png') }}" alt="no home"  class="link-image"></a>
+
+    <a href="https://dbwebb.se/kurser/mvc-v2/kmom10/sustainability">
+        <img src="{{ asset('build/images/books-stack-of-three.png') }}" alt="no book"  class="link-image"></a>
+    </div>
+</html>

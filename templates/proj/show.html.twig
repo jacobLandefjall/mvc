@@ -1,0 +1,203 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Projekt: Hållbar utveckling{% endblock %}
+
+{% block body %}
+    <h1>Diagram</h1>
+
+    <h3>Hållbar Energi</h3>
+    <h4>Handelspris på el för hushåll</h4>
+    <p>Handelspris på el för hushåll, öre/kWh efter förbrukarkategori (årlig elkonsumtion kWh)</p>
+    <div>
+        <canvas id="chart1"  width="800" height="400"></canvas>
+    </div>
+
+    <h4>Förnybar energi i Sverige</h4>
+    <p>Andel av den totala slutliga energianvändningen i procent</p>
+    <div>
+        <canvas id="chart2" width="800" height="400"></canvas>
+    </div>
+
+    <h3>God hälsa och välbefinnande</h3>
+    <h4>Mödradödlighet</h4>
+    <p>Mödradödligheten per 100 000 förlossningar</p>
+    <div>
+        <canvas id="chart3" width="800" height="400"></canvas>
+    </div>
+
+    <h4>Rökning</h4>
+    <p>Antal personer som röker dagligen</p>
+    <div>
+        <canvas id="chart4" width="800" height="400"></canvas>
+    </div>
+
+    <h3>Hållbar konsumtion och produktion</h3>
+    <h4>Livsmedelsavfall</h4>
+    <p>Livsmedelsavfall i Sverige per capita (kilogram) per år</p>
+    <div>
+        <canvas id="chart5" width="800" height="400"></canvas>
+    </div>
+
+    <h4>Växthusgasutsläpp</h4>
+    <p>Växthusgasutsläpp i Sverige och i andra länder (miljoner ton CO2)</p>
+    <div>
+        <canvas id="chart6" width="800" height="400"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var showEnergi = {{ showEnergi|json_encode|raw }};
+        var hallbarEnergi = {{ hallbarEnergi|json_encode|raw }};
+        var goalOne = {{ goalOne|json_encode|raw }};
+        var goalTwo = {{ goalTwo|json_encode|raw }};
+        var produktionGoal = {{ produktionGoal|json_encode|raw }};
+        var greenHouse = {{ greenHouse|json_encode|raw }};
+
+        // Chart 1: Handelspris på el för hushåll
+    var ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(showEnergi),
+            datasets: [
+                {label: 'Mindre än 1000 kWh', data: Object.values(showEnergi).map(period => period[0]), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                {label: '1000 - 2499 kWh', data: Object.values(showEnergi).map(period => period[1]), backgroundColor: 'lightgreen', borderColor: 'black', borderWidth: 1},
+                {label: '2500 - 4999 kWh', data: Object.values(showEnergi).map(period => period[2]), backgroundColor: 'green', borderColor: 'black', borderWidth: 1},
+                {label: '5000 - 14999 kWh', data: Object.values(showEnergi).map(period => period[3]), backgroundColor: 'yellow', borderColor: 'black', borderWidth: 1},
+                {label: '15000 kWh eller mer', data: Object.values(showEnergi).map(period => period[4]), backgroundColor: 'red', borderColor: 'black', borderWidth: 1}
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+        // Chart 2: Förnybar energi i Sverige
+    var ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(hallbarEnergi),
+            datasets: [
+                {label: 'Värme, kyla, industri m.m', data: Object.values(hallbarEnergi).map(year => year[0]), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                {label: 'El', data: Object.values(hallbarEnergi).map(year => year[1]), backgroundColor: 'yellow', borderColor: 'black', borderWidth: 1},
+                {label: 'Transporter', data: Object.values(hallbarEnergi).map(year => year[2]), backgroundColor: 'green', borderColor: 'black', borderWidth: 1},
+                {label: 'Totalt', data: Object.values(hallbarEnergi).map(year => year[3]), backgroundColor: 'orange', borderColor: 'black', borderWidth: 1}
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+        // Chart 3: Mödradödlighet
+        var ctx3 = document.getElementById('chart3').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: Object.keys(goalOne),
+                datasets: [{
+                    label: 'Mödradödlighet per 100 000 levande födda',
+                    data: Object.values(goalOne).map(year => year[0]),
+                    backgroundColor: 'aqua',
+                    borderColor: 'black',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Chart 4: Rökning
+        var ctx4 = document.getElementById('chart4').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(goalTwo),
+                datasets: [
+                    {label: 'Kvinnor 16-29 år', data: Object.values(goalTwo).map(year => year.Kvinnor[0]), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                    {label: 'Kvinnor 30-44 år', data: Object.values(goalTwo).map(year => year.Kvinnor[1]), backgroundColor: 'green', borderColor: 'black', borderWidth: 1},
+                    {label: 'Kvinnor 45-64 år', data: Object.values(goalTwo).map(year => year.Kvinnor[2]), backgroundColor: 'yellow', borderColor: 'black', borderWidth: 1},
+                    {label: 'Kvinnor 65-84 år', data: Object.values(goalTwo).map(year => year.Kvinnor[3]), backgroundColor: 'brown', borderColor: 'black', borderWidth: 1},
+                    {label: 'Män 16-29 år', data: Object.values(goalTwo).map(year => year.Män[0]), backgroundColor: 'gray', borderColor: 'black', borderWidth: 1},
+                    {label: 'Män 30-44 år', data: Object.values(goalTwo).map(year => year.Män[1]), backgroundColor: 'pink', borderColor: 'black', borderWidth: 1},
+                    {label: 'Män 45-64 år', data: Object.values(goalTwo).map(year => year.Män[2]), backgroundColor: 'red', borderColor: 'black', borderWidth: 1},
+                    {label: 'Män 65-84 år', data: Object.values(goalTwo).map(year => year.Män[3]), backgroundColor: 'blue', borderColor: 'black', borderWidth: 1},
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Chart 5: Livsmedelsavfall
+        var ctx5 = document.getElementById('chart5').getContext('2d');
+        new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(produktionGoal),
+                datasets: [
+                    {label: 'Hushåll', data: Object.values(produktionGoal).map(year => year.Hushåll), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                    {label: 'Hushåll inkl. mat och dryck i avlopp', data: Object.values(produktionGoal).map(year => year['Hushåll inkl. mat och dryck i avlopp']), backgroundColor: 'lightgreen', borderColor: 'black', borderWidth: 1},
+                    {label: 'Offentlig måltid', data: Object.values(produktionGoal).map(year => year['Offentlig måltid']), backgroundColor: 'green', borderColor: 'black', borderWidth: 1},
+                    {label: 'Restauranger', data: Object.values(produktionGoal).map(year => year.Restauranger), backgroundColor: 'pink', borderColor: 'black', borderWidth: 1},
+                    {label: 'Livsmedelsbutiker', data: Object.values(produktionGoal).map(year => year.Livsmedelsbutiker), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                    {label: 'Grossister', data: Object.values(produktionGoal).map(year => year.Grossister), backgroundColor: 'brown', borderColor: 'black', borderWidth: 1},
+                    {label: 'Livsmedelsindustri', data: Object.values(produktionGoal).map(year => year.Livsmedelsindustri), backgroundColor: 'yellow', borderColor: 'black', borderWidth: 1},
+                    {label: 'Primärproduktion', data: Object.values(produktionGoal).map(year => year.Primärproduktion), backgroundColor: 'red', borderColor: 'black', borderWidth: 1},
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Chart 6: Växthusgasutsläpp
+        var ctx6 = document.getElementById('chart6').getContext('2d');
+        new Chart(ctx6, {
+            type: 'line',
+            data: {
+                labels: Object.keys(greenHouse),
+                datasets: [
+                    {label: 'Totala utsläpp', data: Object.values(greenHouse).map(year => year['Totala utsläpp']), backgroundColor: 'aqua', borderColor: 'black', borderWidth: 1},
+                    {label: 'Utsläpp i andra länder', data: Object.values(greenHouse).map(year => year['Utsläpp i andra länder']), backgroundColor: 'yellow', borderColor: 'black', borderWidth: 1},
+                    {label: 'Utsläpp i Sverige', data: Object.values(greenHouse).map(year => year['Utsläpp i Sverige']), backgroundColor: 'red', borderColor: 'black', borderWidth: 1}
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% endblock %}

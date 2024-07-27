@@ -1,0 +1,102 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0 4rem;
+    line-height: 1.6;
+}
+
+p {
+    color: black;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+p {
+    margin: 1rem 0;
+    color: black;
+}
+
+canvas {
+    display: block;
+    margin: 2rem auto;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.link-image {
+    width: 100px; /* Justera storleken efter behov */
+    height: auto;
+    margin: 0 10px;
+}
+
+td {
+    padding: 20px; /* Ökar avståndet */
+    border: 1px; /* Kantlinje runt */
+}
+
+th {
+    padding: 10px;
+    color: #1a1a1a;
+}
+
+.Button {
+    font-size: 15px; /* Justera storleken på texten */
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block; /* Gör att knappen inte tar upp hela bredden */
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.Button:hover {
+    background-color: #c1c1c1;
+    color: black
+}
